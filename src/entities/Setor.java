@@ -1,18 +1,18 @@
 package entities;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Setor 
 {
     //Atributos
     private String nome;
-    private ArrayList<Produto> produtos;
-    private ArrayList<Funcionario> funcionarios;
+    private LinkedList<Produto> produtos;
+    private LinkedList<Funcionario> funcionarios;
     
     //Construtores
     public Setor() {}
     
-    public Setor(String nome, ArrayList<Produto> produtos, ArrayList<Funcionario> funcionarios)
+    public Setor(String nome, LinkedList<Produto> produtos, LinkedList<Funcionario> funcionarios)
     {
         this.nome = nome;
         this.produtos = produtos;
@@ -28,19 +28,19 @@ public class Setor
         this.nome = nome;
     }
 
-    public ArrayList<Produto> getProdutos() {
+    public LinkedList<Produto> getProdutos() {
         return produtos;
     }
 
-    public void setProdutos(ArrayList<Produto> produtos) {
+    public void setProdutos(LinkedList<Produto> produtos) {
         this.produtos = produtos;
     }
 
-    public ArrayList<Funcionario> getFuncionarios() {
+    public LinkedList<Funcionario> getFuncionarios() {
         return funcionarios;
     }
 
-    public void setFuncionarios(ArrayList<Funcionario> funcionarios) {
+    public void setFuncionarios(LinkedList<Funcionario> funcionarios) {
         this.funcionarios = funcionarios;
     }
     

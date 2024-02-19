@@ -24,12 +24,18 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="1" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -44,49 +50,37 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
-                  <Component id="Lvalidade" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                  <Component id="TFpreco1" min="-2" pref="218" max="-2" attributes="0"/>
-                  <EmptySpace pref="278" max="32767" attributes="0"/>
-                  <Component id="btnVoltar" min="-2" pref="93" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="LCategoria" min="-2" max="-2" attributes="0"/>
-                      <Component id="title" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="132" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="btnVoltar" min="-2" pref="128" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                          <Component id="btnCadastrar" min="-2" pref="128" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="title" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="278" max="-2" attributes="0"/>
-              </Group>
-              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   <Component id="title" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
-                  <Component id="LCategoria" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="400" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jPanel2" min="-2" pref="478" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnCadastrar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="Lvalidade" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TFpreco1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-              </Group>
-              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
-                      <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="205" max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace pref="60" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -97,15 +91,9 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="36" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Cadastro de Produto"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="LCategoria">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="26" style="0"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/images/05.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Catergoria:"/>
           </Properties>
         </Component>
         <Container class="javax.swing.JPanel" name="jPanel2">
@@ -118,35 +106,42 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="Lcodigo" min="-2" max="-2" attributes="0"/>
-                                  <Component id="TFcodigo" min="-2" pref="284" max="-2" attributes="0"/>
-                                  <Component id="TFquantidade" alignment="0" min="-2" pref="284" max="-2" attributes="0"/>
-                                  <Component id="Lquantidade" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="TFquantidade" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Lquantidade" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Lvalidade" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="TFvalidade" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="Lcodigo" min="-2" max="-2" attributes="0"/>
+                                  <Component id="TFcodigo" min="-2" pref="284" max="-2" attributes="0"/>
+                                  <Component id="TFnome" alignment="0" min="-2" pref="284" max="-2" attributes="0"/>
                                   <Component id="Lnome" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="TFnome" min="-2" pref="284" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="Lmarca" min="-2" max="-2" attributes="0"/>
-                          <Component id="Lpreco1" min="-2" max="-2" attributes="0"/>
-                          <Component id="TFmarca2" pref="278" max="32767" attributes="0"/>
-                          <Component id="TFvalidade" alignment="0" max="32767" attributes="0"/>
-                          <Component id="cmbCategoria" alignment="1" min="-2" pref="275" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="Llote" min="-2" max="-2" attributes="0"/>
+                              <Component id="Lmarca" min="-2" max="-2" attributes="0"/>
+                              <Component id="Lpreco1" min="-2" max="-2" attributes="0"/>
+                              <Component id="TFmarca2" max="32767" attributes="0"/>
+                              <Component id="TFpreco" alignment="0" max="32767" attributes="0"/>
+                              <Component id="cmbCategoria" alignment="0" pref="278" max="32767" attributes="0"/>
+                              <Component id="TFlote" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="LCategoria" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="121" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -154,39 +149,58 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="Lnome" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Lmarca" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="Lmarca" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="TFmarca2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="LCategoria" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="Lnome" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="TFnome" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="Lcodigo" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="TFnome" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="TFmarca2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="TFcodigo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cmbCategoria" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="Lcodigo" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="TFcodigo" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                              <Component id="Lpreco1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="cmbCategoria" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="Lquantidade" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="Lquantidade" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Lpreco1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="TFquantidade" min="-2" max="-2" attributes="0"/>
+                          <Component id="TFpreco" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="TFquantidade" min="-2" max="-2" attributes="0"/>
-                          <Component id="TFvalidade" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="Lvalidade" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="TFlote" min="-2" max="-2" attributes="0"/>
+                                  <Component id="TFvalidade" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="Llote" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace pref="98" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -266,7 +280,7 @@
                 <Property name="text" type="java.lang.String" value="Pre&#xe7;o por Unidade:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="TFvalidade">
+            <Component class="javax.swing.JTextField" name="TFpreco">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="26" style="0"/>
@@ -295,12 +309,56 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
+            <Component class="javax.swing.JTextField" name="TFlote">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="26" style="0"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TFloteActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="Lvalidade">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="26" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Validade:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="Llote">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="26" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Lote de Produto"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="TFvalidade">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="26" style="0"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TFvalidadeActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="LCategoria">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="26" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Catergoria:"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Component class="javax.swing.JButton" name="btnVoltar">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="18" style="0"/>
+              <Font name="Segoe UI" size="23" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Voltar"/>
           </Properties>
@@ -308,20 +366,16 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVoltarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="TFpreco1">
+        <Component class="javax.swing.JButton" name="btnCadastrar">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="26" style="0"/>
+              <Font name="Segoe UI" size="23" style="0"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="Cadastrar"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="Lvalidade">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="26" style="0"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Validade:"/>
-          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastrarActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

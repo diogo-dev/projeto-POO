@@ -42,7 +42,7 @@ public class TelaCadastros extends javax.swing.JFrame {
         jLabel1.setText("O QUE DESEJA FAZER?");
 
         cmbCadastro.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        cmbCadastro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CADASTRAR PRODUTO", "BUSCAR POR PRODUTO", "CADASTRAR FUNCIONÁRIO", "BUSCAR POR FUNCIONÁRIO" }));
+        cmbCadastro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CADASTRAR PRODUTO", "BUSCAR POR PRODUTO", "CADASTRAR FUNCIONÁRIO", "ENTRAR COMO ADMINISTRADOR" }));
 
         Limage04.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/04.png"))); // NOI18N
 
@@ -62,15 +62,15 @@ public class TelaCadastros extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(60, 60, 60)
                 .addComponent(Limage04)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(cmbCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnContinuar))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(117, 117, 117))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(106, 106, 106))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,11 +83,11 @@ public class TelaCadastros extends javax.swing.JFrame {
                         .addComponent(Limage04)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 24, Short.MAX_VALUE)
+                        .addGap(0, 21, Short.MAX_VALUE)
                         .addComponent(cmbCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
+                        .addGap(18, 18, 18)
                         .addComponent(btnContinuar)
-                        .addGap(93, 93, 93))))
+                        .addGap(81, 81, 81))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
