@@ -12,11 +12,12 @@ public class Produto
     private Double preco;
     private Date validade;
     private Integer lote;
+    private String setor;
     
     //Construtores
     public Produto() {}
     
-    public Produto(String nome, Integer codigo, String marca, Integer quantidade, Double preco, Date validade)
+    public Produto(String nome, Integer codigo, String marca, Integer quantidade, Double preco, Date validade, Integer lote, String setor)
     {
         this.nome = nome;
         this.codigo = codigo;
@@ -24,6 +25,8 @@ public class Produto
         this.quantidade = quantidade;
         this.preco = preco;
         this.validade = validade;
+        this.lote = lote;
+        this.setor = setor;
     }
 
     //Encapsulamento
@@ -81,6 +84,14 @@ public class Produto
 
     public void setLote(Integer lote) {
         this.lote = lote;
+    }
+
+    public String getSetor() {
+        return setor;
+    }
+
+    public void setSetor(String setor) {
+        this.setor = setor;
     }
     
     

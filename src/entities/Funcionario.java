@@ -13,11 +13,12 @@ public class Funcionario
     private String funcao;
     private Double salario;
     private Date dataNascimento;
+    private String setor;
     
     //Construtores
     public Funcionario() {}
     
-    public Funcionario(String nome, String email, Integer codigo, String sexo, String funcao, Double salario, Date dataNascimento)
+    public Funcionario(String nome, String email, Integer codigo, String sexo, String funcao, Double salario, Date dataNascimento, String setor)
     {
         this.nome = nome;
         this.email = email;
@@ -26,6 +27,7 @@ public class Funcionario
         this.funcao = funcao;
         this.salario = salario;
         this.dataNascimento = dataNascimento;
+        this.setor = setor;
     }
     
     //Encapsulamento
@@ -83,6 +85,14 @@ public class Funcionario
 
     public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
+    }
+
+    public String getSetor() {
+        return setor;
+    }
+
+    public void setSetor(String setor) {
+        this.setor = setor;
     }
     
 }
