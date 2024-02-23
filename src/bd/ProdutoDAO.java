@@ -11,7 +11,7 @@ public class ProdutoDAO
     public void cadastrarProduto(Produto produto)
     {
         String sql = "INSERT INTO produto(Codigo, Preço, Quantidade, Nome, Marca, Validade, Nome_setor)"
-                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                + "VALUES (?, ?, ?, ?, ?, ?, ?)";
         
         Connection connection = null;
         PreparedStatement pstm = null;
@@ -27,7 +27,7 @@ public class ProdutoDAO
             pstm.setInt(3, produto.getQuantidade());
             pstm.setString(4, produto.getNome());
             pstm.setString(5, produto.getMarca());
-            pstm.setDate(6, (Date) produto.getValidade()); //Validade ja eh do tipo Date
+            pstm.setDate(6, new Date(produto.getValidade().getTime()));
             pstm.setString(7, produto.getSetor());
             
             pstm.execute();

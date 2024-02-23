@@ -102,7 +102,7 @@ public class TelaCadastroProduto extends javax.swing.JFrame {
         TFpreco.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
 
         cmbCategoria.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        cmbCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Café da Manhã", "Mercearia", "Carnes", "Higiene", "Laticínios/Frios", "Limpeza", "Hortifruti", "Outro" }));
+        cmbCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Café da Manhã", "Mercearia", "Carnes", "Higiene", "Laticínios", "Frios", "Limpeza", "Hortifruti", "Outro" }));
 
         TFlote.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
         TFlote.addActionListener(new java.awt.event.ActionListener() {
@@ -310,7 +310,7 @@ public class TelaCadastroProduto extends javax.swing.JFrame {
         prod.setPreco(Double.valueOf(TFpreco.getText()));
         prod.setSetor(cmbCategoria.getSelectedItem().toString());
         
-        DateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+        DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         try {
                 Date validade = (Date)format.parse(TFvalidade.getText());
                 prod.setValidade(validade);
