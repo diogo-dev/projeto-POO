@@ -33,14 +33,19 @@ public class TelaCadastroFuncionario extends javax.swing.JFrame {
         Lmarca = new javax.swing.JLabel();
         TFmarca2 = new javax.swing.JTextField();
         Lcodigo = new javax.swing.JLabel();
-        TFcodigo = new javax.swing.JTextField();
         Lvalidade = new javax.swing.JLabel();
         TFpreco1 = new javax.swing.JTextField();
-        Lquantidade = new javax.swing.JLabel();
-        TFquantidade = new javax.swing.JTextField();
-        Lpreco1 = new javax.swing.JLabel();
-        TFvalidade = new javax.swing.JTextField();
+        TFnome1 = new javax.swing.JTextField();
+        Lvalidade1 = new javax.swing.JLabel();
+        Lcodigo1 = new javax.swing.JLabel();
+        cmbSetor = new javax.swing.JComboBox<>();
+        cmbSetor1 = new javax.swing.JComboBox<>();
+        TFmarca3 = new javax.swing.JTextField();
+        Lmarca1 = new javax.swing.JLabel();
         title = new javax.swing.JLabel();
+        btnCadastrar = new javax.swing.JButton();
+        btnLimpar = new javax.swing.JButton();
+        btnVoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela Cadastro Funcionário");
@@ -50,130 +55,167 @@ public class TelaCadastroFuncionario extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 210, 122));
 
         Lnome.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        Lnome.setText("Nome do produto:");
+        Lnome.setText("Nome do funcionário:");
 
         TFnome.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
 
         Lmarca.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        Lmarca.setText("Marca:");
+        Lmarca.setText("Salário:");
 
         TFmarca2.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
 
         Lcodigo.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        Lcodigo.setText("Código de identificação:");
-
-        TFcodigo.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        TFcodigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TFcodigoActionPerformed(evt);
-            }
-        });
+        Lcodigo.setText("Email:");
 
         Lvalidade.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        Lvalidade.setText("Validade:");
+        Lvalidade.setText("Data de Nascimento:");
 
         TFpreco1.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
 
-        Lquantidade.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        Lquantidade.setText("Quantidade em estoque:");
+        TFnome1.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
 
-        TFquantidade.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        TFquantidade.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TFquantidadeActionPerformed(evt);
-            }
-        });
+        Lvalidade1.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        Lvalidade1.setText("Sexo:");
 
-        Lpreco1.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        Lpreco1.setText("Preço por Unidade:");
+        Lcodigo1.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        Lcodigo1.setText("Setor:");
 
-        TFvalidade.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        cmbSetor.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        cmbSetor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F" }));
+
+        cmbSetor1.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        cmbSetor1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Café da Manhã", "Mercearia", "Carnes", "Higiene", "Laticínios", "Frios", "Limpeza", "Hortifruti", "Outro" }));
+
+        TFmarca3.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+
+        Lmarca1.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
+        Lmarca1.setText("Função:");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 943, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(140, 140, 140)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(TFcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(94, 94, 94)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(Lmarca)
-                                .addComponent(TFmarca2, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
-                                .addComponent(Lvalidade)
-                                .addComponent(TFpreco1)))
-                        .addComponent(Lnome)
-                        .addComponent(Lcodigo)
-                        .addComponent(TFnome, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(TFquantidade, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Lquantidade, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGap(94, 94, 94)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(TFvalidade)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(Lpreco1)
-                                    .addGap(0, 64, Short.MAX_VALUE)))))
-                    .addContainerGap(141, Short.MAX_VALUE)))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(120, 120, 120)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TFnome, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Lcodigo)
+                    .addComponent(Lcodigo1)
+                    .addComponent(cmbSetor1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Lnome)
+                    .addComponent(TFnome1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(101, 101, 101)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Lvalidade)
+                    .addComponent(TFmarca3, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TFmarca2, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Lmarca, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Lmarca1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TFpreco1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cmbSetor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Lvalidade1))
+                .addGap(105, 105, 105))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 425, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(41, 41, 41)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Lvalidade)
+                        .addComponent(Lvalidade1))
+                    .addComponent(Lnome, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Lnome)
-                        .addComponent(Lmarca))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(TFnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(TFmarca2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(33, 33, 33)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Lcodigo)
-                        .addComponent(Lvalidade))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(TFcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(TFpreco1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(34, 34, 34)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Lquantidade)
-                        .addComponent(Lpreco1))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(TFquantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(TFvalidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(53, Short.MAX_VALUE)))
+                        .addComponent(TFpreco1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cmbSetor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TFnome1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Lcodigo)
+                    .addComponent(Lmarca1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TFnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TFmarca3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Lcodigo1)
+                    .addComponent(Lmarca))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmbSetor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TFmarca2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         title.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        title.setText("Cadastro de Funcionário");
+        title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/07.png"))); // NOI18N
+
+        btnCadastrar.setBackground(new java.awt.Color(154, 203, 251));
+        btnCadastrar.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        btnCadastrar.setText("Cadastrar");
+        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarActionPerformed(evt);
+            }
+        });
+
+        btnLimpar.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        btnLimpar.setText("Limpar");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
+
+        btnVoltar.setBackground(new java.awt.Color(255, 182, 182));
+        btnVoltar.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        btnVoltar.setText("Voltar");
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(title)
-                .addGap(257, 257, 257))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)
+                        .addComponent(btnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(79, 79, 79))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(title)
+                        .addGap(24, 24, 24))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(51, 51, 51)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(title)
-                .addGap(38, 38, 38)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(175, Short.MAX_VALUE))
+                .addGap(62, 62, 62)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCadastrar)
+                    .addComponent(btnVoltar)
+                    .addComponent(btnLimpar))
+                .addGap(46, 46, 46))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -191,13 +233,28 @@ public class TelaCadastroFuncionario extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TFcodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFcodigoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TFcodigoActionPerformed
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+        // Setando os parametros do produto
+        
+    }//GEN-LAST:event_btnCadastrarActionPerformed
 
-    private void TFquantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFquantidadeActionPerformed
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        // Limpar os Text Fields
+        /*TFcodigo.setText("");
+        TFlote.setText("");
+        TFmarca.setText("");
+        TFpreco.setText("");
+        TFquantidade.setText("");
+        TFvalidade.setText("");
+        TFnome.setText("");*/
+    }//GEN-LAST:event_btnLimparActionPerformed
+
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TFquantidadeActionPerformed
+        TelaCadastros tc = new TelaCadastros();
+        tc.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -236,17 +293,22 @@ public class TelaCadastroFuncionario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Lcodigo;
+    private javax.swing.JLabel Lcodigo1;
     private javax.swing.JLabel Lmarca;
+    private javax.swing.JLabel Lmarca1;
     private javax.swing.JLabel Lnome;
-    private javax.swing.JLabel Lpreco1;
-    private javax.swing.JLabel Lquantidade;
     private javax.swing.JLabel Lvalidade;
-    private javax.swing.JTextField TFcodigo;
+    private javax.swing.JLabel Lvalidade1;
     private javax.swing.JTextField TFmarca2;
+    private javax.swing.JTextField TFmarca3;
     private javax.swing.JTextField TFnome;
+    private javax.swing.JTextField TFnome1;
     private javax.swing.JTextField TFpreco1;
-    private javax.swing.JTextField TFquantidade;
-    private javax.swing.JTextField TFvalidade;
+    private javax.swing.JButton btnCadastrar;
+    private javax.swing.JButton btnLimpar;
+    private javax.swing.JButton btnVoltar;
+    private javax.swing.JComboBox<String> cmbSetor;
+    private javax.swing.JComboBox<String> cmbSetor1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel title;
