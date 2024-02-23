@@ -10,6 +10,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -302,24 +303,30 @@ public class TelaCadastroProduto extends javax.swing.JFrame {
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         // Setando os parametros do produto
-        Produto prod = new Produto();
-        prod.setNome(TFnome.getText());
-        prod.setCodigo(Integer.valueOf(TFcodigo.getText()));
-        prod.setLote(Integer.valueOf(TFlote.getText()));
-        prod.setQuantidade(Integer.valueOf(TFquantidade.getText()));
-        prod.setPreco(Double.valueOf(TFpreco.getText()));
-        prod.setSetor(cmbCategoria.getSelectedItem().toString());
         
-        DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-        try {
-                Date validade = (Date)format.parse(TFvalidade.getText());
-                prod.setValidade(validade);
-        } catch (ParseException e) {
-                System.out.println("Erro: "+ e);
+        int confirmacao = JOptionPane.showConfirmDialog(null, "Realmente quer fazer o cadastro?");
+        if (confirmacao == 0)
+        {
+            Produto prod = new Produto();
+            prod.setNome(TFnome.getText());
+            prod.setCodigo(Integer.valueOf(TFcodigo.getText()));
+            prod.setLote(Integer.valueOf(TFlote.getText()));
+            prod.setQuantidade(Integer.valueOf(TFquantidade.getText()));
+            prod.setPreco(Double.valueOf(TFpreco.getText()));
+            prod.setSetor(cmbCategoria.getSelectedItem().toString());
+
+            DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+            try {
+                    Date validade = (Date)format.parse(TFvalidade.getText());
+                    prod.setValidade(validade);
+            } catch (ParseException e) {
+                    System.out.println("Erro: "+ e);
+            }
+
+            ProdutoDAO prodDAO = new ProdutoDAO();
+            prodDAO.cadastrarProduto(prod);
         }
         
-        ProdutoDAO prodDAO = new ProdutoDAO();
-        prodDAO.cadastrarProduto(prod);
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
