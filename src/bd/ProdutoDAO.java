@@ -5,6 +5,8 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import java.sql.ResultSet;
+
 
 public class ProdutoDAO 
 {
@@ -32,7 +34,7 @@ public class ProdutoDAO
             pstm.setInt(8, produto.getLote());
             
             pstm.execute();
-            JOptionPane.showMessageDialog(null, "Produto Cadastrado com sucesso!");
+            JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso!");
             
         }catch(Exception e){
             System.out.println("ERRO: " + e.getMessage());
@@ -48,6 +50,49 @@ public class ProdutoDAO
                 }
             } catch (SQLException e) {
                 System.out.println("ERRO: " + e.getMessage());
+            }
+        }
+    }
+    
+    public void deletarProduto (String nome)
+    {
+        String sql = "DELETE FROM produto WHERE nome = ?";
+        Connection conn = null;
+        PreparedStatement pstm = null;
+        String sqlSelect = "SELECT id_filme FROM filme WHERE nome_filme = ?";
+        ResultSet rs = null;
+        
+        try {
+            conn = ConexaoBD.createConexao();
+            pstm = conn.prepareStatement(sqlSelect);
+            pstm.setString(1, nome); 
+            
+            rs = pstm.executeQuery();
+            
+            if (rs.next()){
+                pstm = conn.prepareStatement(sql);
+                pstm.setString(1, nome);
+                pstm.execute();
+                JOptionPane.showMessageDialog(null, "Filme deletado com sucesso!");
+            }else {
+                JOptionPane.showMessageDialog(null, "Filme não encontrado!");
+            }
+            
+        } catch (Exception e){
+            System.out.println("Erro: "+e);
+        } finally {
+            try{
+                if (pstm!=null){
+                    pstm.close();
+                }
+                if (conn!=null){
+                    conn.close();
+                }
+                if (rs!=null){
+                    rs.close();
+                }
+            } catch(SQLException ex){
+                System.out.println("Erro: "+ex);
             }
         }
     }

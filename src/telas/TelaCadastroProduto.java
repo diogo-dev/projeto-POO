@@ -302,11 +302,12 @@ public class TelaCadastroProduto extends javax.swing.JFrame {
     }//GEN-LAST:event_TFvalidadeActionPerformed
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-        // Setando os parametros do produto
         
+        // Fazendo a conformação do cadasdtro        
         int confirmacao = JOptionPane.showConfirmDialog(null, "Realmente quer fazer o cadastro?");
         if (confirmacao == 0)
         {
+            // Setando os parametros do produto
             Produto prod = new Produto();
             prod.setNome(TFnome.getText());
             prod.setCodigo(Integer.valueOf(TFcodigo.getText()));
