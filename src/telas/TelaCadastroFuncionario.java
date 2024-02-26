@@ -335,13 +335,13 @@ public class TelaCadastroFuncionario extends javax.swing.JFrame {
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
         // Limpar os Text Fields
-        /*TFcodigo.setText("");
-        TFlote.setText("");
-        TFmarca.setText("");
-        TFpreco.setText("");
-        TFquantidade.setText("");
-        TFvalidade.setText("");
-        TFnome.setText("");*/
+        TFnome.setText("");
+        TFemail.setText("");
+        TFdataNascimento.setText("");
+        TFsalario.setText("");
+        TFfuncao.setText("");
+        PFsenha.setText("");
+        PFconfirmarSenha.setText("");
     }//GEN-LAST:event_btnLimparActionPerformed
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed

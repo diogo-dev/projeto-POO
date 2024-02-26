@@ -8,7 +8,6 @@ public class Funcionario
     //Atributos
     private String nome;
     private String email;
-    private Integer codigo;
     private String sexo;
     private String funcao;
     private Double salario;
@@ -20,11 +19,10 @@ public class Funcionario
     //Construtores
     public Funcionario() {}
     
-    public Funcionario(String nome, String email, Integer codigo, String sexo, String funcao, Double salario, Date dataNascimento, String setor, String usuario, String senha)
+    public Funcionario(String nome, String email, String sexo, String funcao, Double salario, Date dataNascimento, String setor, String usuario, String senha)
     {
         this.nome = nome;
         this.email = email;
-        this.codigo = codigo;
         this.sexo = sexo;
         this.funcao = funcao;
         this.salario = salario;
@@ -49,14 +47,6 @@ public class Funcionario
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Integer getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(Integer codigo) {
-        this.codigo = codigo;
     }
 
     public String getSexo() {

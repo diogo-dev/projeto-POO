@@ -57,21 +57,23 @@ public class FuncionarioDAO {
 
     public List<Funcionario> listarFuncionario(){
         String sql = "SELECT * FROM Funcionario";
-        List<Funcionario> funcionarios = new ArrayList<Funcionario>();
+        List<Funcionario> funcionarios = new ArrayList<>();
 
         Connection conn = null;
         PreparedStatement pstm = null;
         ResultSet rs = null;
 
         try{
+            //Criar conexao
             conn = ConexaoBD.createConexao();
+            //Criar o Prepared Statement
             pstm = conn.prepareStatement(sql);
-
+            //Criar o Result Set
             rs = pstm.executeQuery();
 
-            while(rs.next()){
+            while(rs.next())
+            {
                 Funcionario user = new Funcionario();
-                user.setCodigo(rs.getInt("codigo"));
                 user.setDataNascimento(rs.getDate("dataNascimento"));
                 user.setEmail(rs.getString("email"));
                 user.setFuncao(rs.getString("funçao"));
@@ -101,14 +103,17 @@ public class FuncionarioDAO {
         }
     }
 
-    public void removerporFuncionario(String funcionario){
-        String sql = "DELETE FROM Funcionario WHERE funcionario = ?";
+    public void removerporFuncionario(Funcionario funcionario){
+        String sql = "DELETE FROM funcionario WHERE usuario = ?";
         Connection conn = null;
         PreparedStatement pstm = null;
+        
         try{
+           //Criar a conexao
            conn = ConexaoBD.createConexao();
+           //Criar o Prepared Statement
            pstm = conn.prepareStatement(sql);
-           pstm.setString(1, funcionario);
+           pstm.setString(1, funcionario.getUsuario());
 
            pstm.execute();
            JOptionPane.showMessageDialog(null, "Usuario removido com sucesso!");
@@ -131,30 +136,30 @@ public class FuncionarioDAO {
 
     public boolean autenticar(Funcionario funcionario){
         boolean autenticado = false;
-        String sql = "SELECT usuario, senha FROM Funcionario"
-                + "WHERE usuario=? and senha=?";
+        String sql = "SELECT usuario, senha FROM funcionario" + "WHERE usuario=? and senha=?";
         Connection conn = null;
         PreparedStatement pstm = null;
         ResultSet rs = null;
-        System.out.println("Aqui");
 
         try{
+            //criar a conexao
             conn = ConexaoBD.createConexao();
+            //criar um preparedStatement
             pstm = conn.prepareStatement(sql);
+            //colocar os parametros
             pstm.setString(1, funcionario.getUsuario());
             pstm.setString(2, funcionario.getSenha());
 
             rs = pstm.executeQuery();
 
-            while (rs.next()){
+            while (rs.next())
+            {
                 String usuarioBanco = rs.getString("usuario");
                 String senhaBanco = rs.getString("senha");
                 autenticado = true;
             }
-
-
-        } catch (SQLException ex){
-            System.out.println("Erro: "+ex);
+        } catch (SQLException e){
+            System.out.println("Erro: "+ e);
         } finally {
             try{
                 if (pstm!=null){
@@ -166,10 +171,11 @@ public class FuncionarioDAO {
                 if (rs!=null){
                     rs.close();
                 }
-            } catch (SQLException ex){
-                System.out.println("Erro: "+ex);
+            } catch (SQLException e){
+                System.out.println("Erro: "+ e);
             }
             return autenticado;
         }
+        
     }
 }
