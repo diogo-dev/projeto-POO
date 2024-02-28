@@ -136,7 +136,7 @@ public class FuncionarioDAO {
 
     public boolean autenticar(Funcionario funcionario){
         boolean autenticado = false;
-        String sql = "SELECT usuario, senha FROM funcionario" + "WHERE usuario=? and senha=?";
+        String sql = "SELECT usuario, senha FROM funcionario WHERE usuario = ? and senha = ?";
         Connection conn = null;
         PreparedStatement pstm = null;
         ResultSet rs = null;

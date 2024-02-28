@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 public class ConexaoBD 
 {
     private static final String usuario = "root";
-    private static final String senha = "D1ogo&MYSQL";
+    private static final String senha = "123gu123glatz123";
     private static final String bd_url = "jdbc:mysql://localhost:3306/mercado";
     
     public static Connection createConexao() throws Exception {
