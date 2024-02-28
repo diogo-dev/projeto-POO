@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ProdutoDAO 
@@ -38,6 +40,8 @@ public class ProdutoDAO
             
         }catch(Exception e){
             System.out.println("ERRO: " + e.getMessage());
+            // caso tente-se cadastrar um produto que possui o mesmo código de um ja cadastrado
+            JOptionPane.showMessageDialog(null, "Código de identificação já Cadastrado!");
         } finally {
             try {
                 if (connection != null)
@@ -95,5 +99,100 @@ public class ProdutoDAO
                 System.out.println("Erro: "+ex);
             }
         }
+    }
+    
+     public List<Produto> listarProdutos(Produto produto)
+     {
+        String sql = "SELECT * FROM produto WHERE codigo like ?";
+        List<Produto> produtos = new ArrayList<Produto>();
+        Connection conn = null;
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+        
+        try{
+            conn = ConexaoBD.createConexao();
+            pstm = conn.prepareStatement(sql);
+            pstm.setString(1, produto.getCodigo()+"%");
+            
+            rs = pstm.executeQuery();
+            
+            while(rs.next())
+            {
+                Produto p = new Produto();
+                p.setCodigo(rs.getInt("codigo"));
+                p.setPreco(rs.getDouble("preço"));
+                p.setQuantidade(rs.getInt("quantidade"));
+                p.setNome(rs.getString("nome"));
+                p.setMarca(rs.getString("marca"));
+                p.setValidade(rs.getDate("validade"));
+                p.setSetor(rs.getString("nome_setor"));
+                p.setLote(rs.getInt("lote"));
+                
+                produtos.add(p);
+            }
+            
+        } catch (Exception e){
+            System.out.println("Erro: "+ e);
+        } finally {
+            try{
+                if (pstm!=null){
+                    pstm.close();
+                }
+                if (conn!=null){
+                    conn.close();
+                }
+                if (rs!=null){
+                    rs.close();
+                }
+            } catch(Exception e){
+                System.out.println("Erro: "+ e);
+            }
+        }
+        
+        return produtos;
+    }
+     
+    public List<Produto> listarTodosProdutos(Produto produto)
+    {
+        String sql = "SELECT DISTINCT codigo, nome FROM produto";
+        List<Produto> produtos = new ArrayList<Produto>();
+        Connection conn = null;
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+        
+        try{
+            conn = ConexaoBD.createConexao();
+            pstm = conn.prepareStatement(sql);
+            
+            rs = pstm.executeQuery();
+            
+            while(rs.next())
+            {
+                Produto p = new Produto();
+                p.setCodigo(rs.getInt("codigo"));
+                p.setNome(rs.getString("nome"));
+                
+                produtos.add(p);
+            }
+            
+        } catch (Exception e){
+            System.out.println("Erro: "+ e);
+        } finally {
+            try{
+                if (pstm!=null){
+                    pstm.close();
+                }
+                if (conn!=null){
+                    conn.close();
+                }
+                if (rs!=null){
+                    rs.close();
+                }
+            } catch(SQLException e){
+                System.out.println("Erro: "+ e);
+            }
+        }
+        
+        return produtos;
     }
 }

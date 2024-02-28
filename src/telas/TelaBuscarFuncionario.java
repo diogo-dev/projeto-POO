@@ -177,7 +177,7 @@ public class TelaBuscarFuncionario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bntBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntBuscarActionPerformed
-        // TODO add your handling code here:
+
         Funcionario funcionario = new Funcionario();
         funcionario.setUsuario(TFusuario.getText());
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -200,7 +200,7 @@ public class TelaBuscarFuncionario extends javax.swing.JFrame {
                 resultado += "Sexo: " + f.getSexo()+ "\n";
                 resultado += "Função: " + f.getFuncao()+ "\n";
                 resultado += "Setor: " + f.getSetor()+ "\n";
-                resultado += "Salário: " + f.getSalario()+ "\n";
+                resultado += "Salário: " + f.getSalario()+ "\n\n\n";
             }
             
             TAsaida.setText(resultado);
