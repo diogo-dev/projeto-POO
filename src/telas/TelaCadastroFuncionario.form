@@ -306,16 +306,11 @@
                   <Font name="Segoe UI" size="26" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="9">
-                    <StringItem index="0" value="Caf&#xe9; da Manh&#xe3;"/>
-                    <StringItem index="1" value="Mercearia"/>
-                    <StringItem index="2" value="Carnes"/>
-                    <StringItem index="3" value="Higiene"/>
-                    <StringItem index="4" value="Latic&#xed;nios"/>
-                    <StringItem index="5" value="Frios"/>
-                    <StringItem index="6" value="Limpeza"/>
-                    <StringItem index="7" value="Hortifruti"/>
-                    <StringItem index="8" value="Outro"/>
+                  <StringArray count="4">
+                    <StringItem index="0" value="Administra&#xe7;&#xe3;o"/>
+                    <StringItem index="1" value="Financeiro"/>
+                    <StringItem index="2" value="Dep&#xf3;sito"/>
+                    <StringItem index="3" value="Mercado"/>
                   </StringArray>
                 </Property>
               </Properties>

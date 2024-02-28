@@ -98,7 +98,7 @@ public class TelaCadastroFuncionario extends javax.swing.JFrame {
         cmbSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F" }));
 
         cmbSetor.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        cmbSetor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Café da Manhã", "Mercearia", "Carnes", "Higiene", "Laticínios", "Frios", "Limpeza", "Hortifruti", "Outro" }));
+        cmbSetor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administração", "Financeiro", "Depósito", "Mercado" }));
 
         TFfuncao.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
 
@@ -346,7 +346,7 @@ public class TelaCadastroFuncionario extends javax.swing.JFrame {
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         // TODO add your handling code here:
-        TelaCadastros tc = new TelaCadastros();
+        TelaInicial tc = new TelaInicial();
         tc.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnVoltarActionPerformed

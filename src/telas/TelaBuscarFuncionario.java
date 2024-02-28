@@ -4,6 +4,12 @@
  */
 package telas;
 
+import bd.FuncionarioDAO;
+import entities.Funcionario;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author diogo
@@ -31,7 +37,7 @@ public class TelaBuscarFuncionario extends javax.swing.JFrame {
         TFusuario = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        TAsaida = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela Buscar por Funcionário");
@@ -46,20 +52,25 @@ public class TelaBuscarFuncionario extends javax.swing.JFrame {
 
         btnBuscar.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        TAsaida.setColumns(20);
+        TAsaida.setRows(5);
+        jScrollPane1.setViewportView(TAsaida);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(87, 87, 87)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnBuscar)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
                         .addComponent(Lusuario)
                         .addGap(18, 18, 18)
                         .addComponent(TFusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -87,7 +98,40 @@ public class TelaBuscarFuncionario extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        // bucar pelos dados do funcionario digitado
+        Funcionario funcionario = new Funcionario();
+        funcionario.setUsuario(TFusuario.getText());
+        
+        if (funcionario.getUsuario().equals(""))
+        {
+            JOptionPane.showMessageDialog(null, "Digite o usuario do funcionario!");
+        }
+        else
+        {
+            List<Funcionario> funcionarios = new ArrayList<>();
+            FuncionarioDAO funDAO = new FuncionarioDAO();
+            funcionarios = funDAO.listarFuncionario(funcionario);
+            
+            String resultado = "Dados do funcionario:\n";
+            for (Funcionario f : funcionarios){
+                resultado += "Nome: " + f.getNome() + "\n";
+                resultado += "Email: " + f.getEmail() + "\n";
+                //resultado += "Data de Nascimento: " + funcionario.getDataNascimento()+ "\n";
+                resultado += "Sexo: " + f.getSexo()+ "\n";
+                resultado += "Função: " + f.getFuncao()+ "\n";
+                resultado += "Setor: " + f.getSetor()+ "\n";
+                resultado += "Salário: " + f.getSalario()+ "\n";
+            }
+            
+            TAsaida.setText(resultado);
+            
+        }
+                
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,9 +171,9 @@ public class TelaBuscarFuncionario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Ltitulo;
     private javax.swing.JLabel Lusuario;
+    private javax.swing.JTextArea TAsaida;
     private javax.swing.JTextField TFusuario;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }

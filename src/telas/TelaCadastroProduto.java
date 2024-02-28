@@ -126,7 +126,7 @@ public class TelaCadastroProduto extends javax.swing.JFrame {
         });
 
         LCategoria.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        LCategoria.setText("Catergoria:");
+        LCategoria.setText("Categoria:");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -288,7 +288,7 @@ public class TelaCadastroProduto extends javax.swing.JFrame {
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         // TODO add your handling code here:
-        TelaCadastros tc = new TelaCadastros();
+        TelaInicial tc = new TelaInicial();
         tc.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnVoltarActionPerformed

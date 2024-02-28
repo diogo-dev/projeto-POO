@@ -55,8 +55,9 @@ public class FuncionarioDAO {
         }
     }
 
-    public List<Funcionario> listarFuncionario(){
-        String sql = "SELECT * FROM Funcionario";
+    public List<Funcionario> listarFuncionario(Funcionario funcionario)
+    {
+        String sql = "SELECT * FROM Funcionario WHERE usuario like ?";
         List<Funcionario> funcionarios = new ArrayList<>();
 
         Connection conn = null;
@@ -68,22 +69,23 @@ public class FuncionarioDAO {
             conn = ConexaoBD.createConexao();
             //Criar o Prepared Statement
             pstm = conn.prepareStatement(sql);
+            pstm.setString(1, funcionario.getUsuario() + "%");
             //Criar o Result Set
             rs = pstm.executeQuery();
 
             while(rs.next())
             {
-                Funcionario user = new Funcionario();
-                user.setDataNascimento(rs.getDate("dataNascimento"));
-                user.setEmail(rs.getString("email"));
-                user.setFuncao(rs.getString("funçao"));
-                user.setNome(rs.getString("nome"));
-                user.setSalario(rs.getDouble("salario"));
-                user.setSetor(rs.getString("setor"));
-                user.setSexo(rs.getString("sexo"));
-                user.setUsuario(rs.getString("usuario"));
+                Funcionario f = new Funcionario();
+                f.setDataNascimento(rs.getDate("data_de_nascimento"));
+                f.setEmail(rs.getString("email"));
+                f.setFuncao(rs.getString("funçao"));
+                f.setNome(rs.getString("nome"));
+                f.setSalario(rs.getDouble("salario"));
+                f.setSetor(rs.getString("setor"));
+                f.setSexo(rs.getString("sexo"));
+                f.setUsuario(rs.getString("usuario"));
 
-                funcionarios.add(user);
+                funcionarios.add(f);
             }
 
         } catch (Exception ex){
@@ -99,8 +101,8 @@ public class FuncionarioDAO {
             } catch(SQLException ex){
                 System.out.println("Erro: "+ex);
             }
-        return funcionarios;
         }
+        return funcionarios;
     }
 
     public void removerporFuncionario(Funcionario funcionario){
@@ -136,7 +138,7 @@ public class FuncionarioDAO {
 
     public boolean autenticar(Funcionario funcionario){
         boolean autenticado = false;
-        String sql = "SELECT usuario, senha FROM funcionario" + "WHERE usuario=? and senha=?";
+        String sql = "SELECT usuario, senha FROM funcionario WHERE usuario like ? and senha like ?";
         Connection conn = null;
         PreparedStatement pstm = null;
         ResultSet rs = null;
@@ -176,6 +178,52 @@ public class FuncionarioDAO {
             }
             return autenticado;
         }
-        
+       
+    }
+    public boolean autenticarAdiministrador(Funcionario funcionario){
+        boolean autenticado = false;
+        String sql = "SELECT setor FROM funcionario WHERE usuario like ? and senha like ?";
+        Connection conn = null;
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+
+        try{
+            //criar a conexao
+            conn = ConexaoBD.createConexao();
+            //criar um preparedStatement
+            pstm = conn.prepareStatement(sql);
+            //colocar os parametros
+            pstm.setString(1, funcionario.getUsuario());
+            pstm.setString(2, funcionario.getSenha());
+
+            rs = pstm.executeQuery();
+
+            while (rs.next())
+            {
+                String setorBanco = rs.getString("setor");
+                if(setorBanco.equals("Administração"))
+                {
+                    autenticado = true;
+                }
+            }
+        } catch (SQLException e){
+            System.out.println("Erro: "+ e);
+        } finally {
+            try{
+                if (pstm!=null){
+                    pstm.close();
+                }
+                if (conn!=null){
+                    conn.close();
+                }
+                if (rs!=null){
+                    rs.close();
+                }
+            } catch (SQLException e){
+                System.out.println("Erro: "+ e);
+            }
+            return autenticado;
+        }
+       
     }
 }

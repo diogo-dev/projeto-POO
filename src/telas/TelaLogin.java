@@ -17,6 +17,7 @@ public class TelaLogin extends javax.swing.JFrame {
     public TelaLogin() {
         initComponents();
     }
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -162,14 +163,25 @@ public class TelaLogin extends javax.swing.JFrame {
         funcionario.setSenha(String.valueOf(PFsenha.getPassword()));
         //Verificar se eles conferem e estão no cadastrados no BD
         FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
-        boolean entrar = funcionarioDAO.autenticar(funcionario);
+        boolean entrarComum = funcionarioDAO.autenticar(funcionario);
+        boolean entrarAdmin = funcionarioDAO.autenticarAdiministrador(funcionario);
         
         // Se o usuario e senha estiverem certos, então
-        if(entrar == true)
+        if(entrarComum == true)
         {
-            TelaCadastros tc = new TelaCadastros();
-            tc.setVisible(true);
-            this.dispose();
+            if(entrarAdmin == true)
+            {
+                JOptionPane.showMessageDialog(null, "Bem-Vindo Administrador!");
+                TelaInicialAdmin tca = new TelaInicialAdmin();
+                tca.setVisible(true);
+                this.dispose();
+            }
+            else
+            {
+                TelaInicial tc = new TelaInicial();
+                tc.setVisible(true);
+                this.dispose();
+            }
         }
         else //senao
         {
@@ -185,7 +197,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEsqueceuSenhaActionPerformed
 
     private void CBverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBverActionPerformed
-        // TODO add your handling code here:
+        // Show Password
         if(CBver.isSelected())
         {
             PFsenha.setEchoChar((char)0);
