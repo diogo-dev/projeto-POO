@@ -28,9 +28,7 @@ public class TelaLogin extends javax.swing.JFrame {
         Lusuario = new javax.swing.JLabel();
         Lsenha = new javax.swing.JLabel();
         btnEntrar = new javax.swing.JButton();
-        LesqueceuSenha = new javax.swing.JLabel();
         Llogin = new javax.swing.JLabel();
-        btnEsqueceuSenha = new javax.swing.JButton();
         PFsenha = new javax.swing.JPasswordField();
         CBver = new javax.swing.JCheckBox();
 
@@ -59,23 +57,14 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
 
-        LesqueceuSenha.setText("Não possui cadastro ? ");
-
         Llogin.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         Llogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/02.png"))); // NOI18N
-
-        btnEsqueceuSenha.setForeground(new java.awt.Color(255, 86, 86));
-        btnEsqueceuSenha.setText("CADASTRE-SE AQUI!");
-        btnEsqueceuSenha.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        btnEsqueceuSenha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEsqueceuSenhaActionPerformed(evt);
-            }
-        });
 
         PFsenha.setBackground(new java.awt.Color(254, 233, 185));
         PFsenha.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
+        CBver.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
+        CBver.setText("Mostrar senha");
         CBver.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 CBverStateChanged(evt);
@@ -94,11 +83,6 @@ public class TelaLogin extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(198, 198, 198)
-                        .addComponent(LesqueceuSenha)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEsqueceuSenha))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(158, 158, 158)
                         .addComponent(Llogin))
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -106,16 +90,13 @@ public class TelaLogin extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Lusuario)
                             .addComponent(TFusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(PFsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Lsenha))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(CBver, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(PFsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Lsenha)
+                            .addComponent(CBver)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(239, 239, 239)
+                        .addGap(235, 235, 235)
                         .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,16 +110,12 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addComponent(Lsenha)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(CBver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PFsenha))
-                .addGap(40, 40, 40)
+                .addComponent(PFsenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CBver, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
                 .addComponent(btnEntrar)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnEsqueceuSenha)
-                    .addComponent(LesqueceuSenha))
-                .addGap(33, 33, 33))
+                .addGap(51, 51, 51))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -189,12 +166,6 @@ public class TelaLogin extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_btnEntrarActionPerformed
-
-    private void btnEsqueceuSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEsqueceuSenhaActionPerformed
-        // TODO add your handling code here:
-        //TelaCadastroFuncionario tcf = new TelaCadastroFuncionario();
-        //tcf.setVisible(true);
-    }//GEN-LAST:event_btnEsqueceuSenhaActionPerformed
 
     private void CBverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CBverActionPerformed
         // Show Password
@@ -250,14 +221,12 @@ public class TelaLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox CBver;
-    private javax.swing.JLabel LesqueceuSenha;
     private javax.swing.JLabel Llogin;
     private javax.swing.JLabel Lsenha;
     private javax.swing.JLabel Lusuario;
     private javax.swing.JPasswordField PFsenha;
     private javax.swing.JTextField TFusuario;
     private javax.swing.JButton btnEntrar;
-    private javax.swing.JButton btnEsqueceuSenha;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

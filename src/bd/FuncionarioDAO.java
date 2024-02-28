@@ -13,7 +13,7 @@ import java.sql.SQLException;
 public class FuncionarioDAO {
 
     public void inserirFuncionario(Funcionario funcionario){
-        String sql = "INSERT INTO Funcionario(Nome, Email, Sexo, Funçao, Data_de_nascimento, Setor, Salario, usuario, senha)"
+        String sql = "INSERT INTO Funcionario(nome, email, sexo, funcao, data_de_nascimento, nome_setor, salario, usuario, senha)"
                 + "Values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         Connection conn = null;
         PreparedStatement pstm = null;
@@ -78,10 +78,10 @@ public class FuncionarioDAO {
                 Funcionario f = new Funcionario();
                 f.setDataNascimento(rs.getDate("data_de_nascimento"));
                 f.setEmail(rs.getString("email"));
-                f.setFuncao(rs.getString("funçao"));
+                f.setFuncao(rs.getString("funcao"));
                 f.setNome(rs.getString("nome"));
                 f.setSalario(rs.getDouble("salario"));
-                f.setSetor(rs.getString("setor"));
+                f.setSetor(rs.getString("nome_setor"));
                 f.setSexo(rs.getString("sexo"));
                 f.setUsuario(rs.getString("usuario"));
 
@@ -182,7 +182,7 @@ public class FuncionarioDAO {
     }
     public boolean autenticarAdiministrador(Funcionario funcionario){
         boolean autenticado = false;
-        String sql = "SELECT setor FROM funcionario WHERE usuario like ? and senha like ?";
+        String sql = "SELECT nome_setor FROM funcionario WHERE usuario like ? and senha like ?";
         Connection conn = null;
         PreparedStatement pstm = null;
         ResultSet rs = null;
@@ -200,7 +200,7 @@ public class FuncionarioDAO {
 
             while (rs.next())
             {
-                String setorBanco = rs.getString("setor");
+                String setorBanco = rs.getString("nome_setor");
                 if(setorBanco.equals("Administração"))
                 {
                     autenticado = true;

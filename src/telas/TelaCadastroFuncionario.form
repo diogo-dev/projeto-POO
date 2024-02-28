@@ -24,7 +24,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Component id="jPanel1" min="-2" pref="1064" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -47,40 +47,39 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jPanel2" alignment="1" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              </Group>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="29" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="btnVoltar" min="-2" pref="128" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                          <Component id="btnLimpar" min="-2" pref="128" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                          <Component id="btnCadastrar" min="-2" pref="128" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="title" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="btnVoltar" min="-2" pref="128" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="btnLimpar" min="-2" pref="128" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                  <Component id="btnCadastrar" min="-2" pref="128" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                  <Component id="title" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="23" max="32767" attributes="0"/>
                   <Component id="title" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jPanel2" min="-2" pref="384" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnCadastrar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnLimpar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                  <EmptySpace pref="32" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -97,112 +96,111 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="Lsetor" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="Lusuario1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="cmbSetor" alignment="0" max="32767" attributes="0"/>
+                          <Component id="TFnome" alignment="0" max="32767" attributes="0"/>
+                          <Component id="Lnome" alignment="0" max="32767" attributes="0"/>
+                          <Component id="TFusuario" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="LconfirmarSenha" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="PFsenha" alignment="0" pref="249" max="32767" attributes="0"/>
+                              <Component id="TFfuncao" alignment="0" max="32767" attributes="0"/>
+                              <Component id="TFemail" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Lemail" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="Lfuncao" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="Lsenha" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="CBver" alignment="0" min="-2" pref="107" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="CBver1" min="-2" pref="107" max="-2" attributes="0"/>
+                          <Component id="LconfirmarSenha" min="-2" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="PFconfirmarSenha" max="32767" attributes="0"/>
-                                  <Component id="TFemail" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="Lemail" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="Lsetor" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cmbSetor" alignment="0" pref="284" max="32767" attributes="0"/>
-                                  <Component id="Lnome" min="-2" max="-2" attributes="0"/>
-                                  <Component id="TFnome" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="TFusuario" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="Lusuario1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                              <Component id="Lsalario" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="PFconfirmarSenha" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="TFsalario" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="LdataNascimento" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="TFdataNascimento" alignment="0" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="Lsenha" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="LdataNascimento" alignment="0" max="32767" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="PFsenha" alignment="0" pref="238" max="32767" attributes="0"/>
-                                                  <Component id="TFsalario" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="TFfuncao" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="Lsalario" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="Lfuncao" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="TFdataNascimento" alignment="0" max="32767" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="cmbSexo" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Lsexo" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="cmbSexo" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Lsexo" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
+                      <EmptySpace pref="74" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                              <Component id="LdataNascimento" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="Lsexo" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="Lnome" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="Lnome" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Lemail" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LdataNascimento" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Lsexo" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="TFdataNascimento" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="TFemail" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="cmbSexo" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="TFnome" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="Lemail" min="-2" max="-2" attributes="0"/>
-                          <Component id="Lfuncao" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="Lfuncao" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Lsalario" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                              <Component id="LconfirmarSenha" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="Lsetor" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="cmbSetor" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="TFfuncao" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="TFsalario" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="Lusuario1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Lsenha" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="TFusuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="PFsenha" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="PFconfirmarSenha" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="TFemail" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="TFfuncao" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="CBver" alignment="3" max="32767" attributes="0"/>
+                          <Component id="CBver1" alignment="3" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="Lsetor" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Lsalario" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="cmbSetor" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="TFsalario" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="Lusuario1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Lsenha" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="TFusuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="PFsenha" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="LconfirmarSenha" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="PFconfirmarSenha" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="40" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="290" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -377,6 +375,24 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Senha:"/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="CBver">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Mostrar Senha"/>
+              </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="CBverStateChanged"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CBverActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="CBver1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Mostrar Senha"/>
+              </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="CBver1StateChanged"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CBver1ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

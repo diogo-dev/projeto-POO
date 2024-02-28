@@ -12,7 +12,7 @@ public class ProdutoDAO
 {
     public void cadastrarProduto(Produto produto)
     {
-        String sql = "INSERT INTO produto(Codigo, Preço, Quantidade, Nome, Marca, Validade, Nome_setor, lote)"
+        String sql = "INSERT INTO produto(codigo, preço, quantidade, nome, marca, validade, nome_setor, lote)"
                 + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         
         Connection connection = null;
