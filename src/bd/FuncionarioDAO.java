@@ -204,6 +204,7 @@ public class FuncionarioDAO {
                 if(setorBanco.equals("Administração"))
                 {
                     autenticado = true;
+                    funcionario.setSetor("Administração");
                 }
             }
         } catch (SQLException e){

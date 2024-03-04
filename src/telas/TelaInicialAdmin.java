@@ -4,6 +4,8 @@
  */
 package telas;
 
+import entities.Funcionario;
+
 /**
  *
  * @author diogo
@@ -13,7 +15,15 @@ public class TelaInicialAdmin extends javax.swing.JFrame {
     /**
      * Creates new form TelaInicialAdmin
      */
+    private Funcionario funcionario = new Funcionario();
+    
     public TelaInicialAdmin() {
+        initComponents();
+    }
+    
+    public TelaInicialAdmin(Funcionario funcionario) 
+    {
+        this.funcionario = funcionario;
         initComponents();
     }
 
@@ -111,13 +121,13 @@ public class TelaInicialAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (cmbCadastro.getSelectedItem().toString().equals("CADASTRAR PRODUTO"))
         {
-            TelaCadastroProduto tcp = new TelaCadastroProduto();
+            TelaCadastroProduto tcp = new TelaCadastroProduto(funcionario);
             tcp.setVisible(true);
             this.dispose();
         }
         else if (cmbCadastro.getSelectedItem().toString().equals("BUSCAR POR PRODUTO"))
         {
-            TelaBuscarProduto tbp = new TelaBuscarProduto();
+            TelaBuscarProduto tbp = new TelaBuscarProduto(funcionario);
             tbp.setVisible(true);
             this.dispose();
         }
@@ -129,13 +139,13 @@ public class TelaInicialAdmin extends javax.swing.JFrame {
         }
         else if (cmbCadastro.getSelectedItem().toString().equals("CADASTRAR FUNCIONÁRIO"))
         {
-            TelaCadastroFuncionario tcf = new TelaCadastroFuncionario();
+            TelaCadastroFuncionario tcf = new TelaCadastroFuncionario(funcionario);
             tcf.setVisible(true);
             this.dispose();
         }
         else if (cmbCadastro.getSelectedItem().toString().equals("BUSCAR POR FUNCIONÁRIO"))
         {
-            TelaBuscarFuncionario tbf = new TelaBuscarFuncionario();
+            TelaBuscarFuncionario tbf = new TelaBuscarFuncionario(funcionario);
             tbf.setVisible(true);
             this.dispose();
         }

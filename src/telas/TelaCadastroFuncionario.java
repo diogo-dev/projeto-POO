@@ -21,7 +21,16 @@ public class TelaCadastroFuncionario extends javax.swing.JFrame {
     /**
      * Creates new form TelaCadastroFuncionario
      */
+    
+    private Funcionario funcionario = new Funcionario();
+    
     public TelaCadastroFuncionario() {
+        initComponents();
+    }
+    
+    public TelaCadastroFuncionario(Funcionario funcionario) 
+    {
+        this.funcionario = funcionario;
         initComponents();
     }
 
@@ -373,9 +382,18 @@ public class TelaCadastroFuncionario extends javax.swing.JFrame {
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         // TODO add your handling code here:
-        TelaInicial tc = new TelaInicial();
-        tc.setVisible(true);
-        this.dispose();
+        if(funcionario.getSetor().equals("Administração"))
+        {
+            TelaInicialAdmin tc = new TelaInicialAdmin(funcionario);
+            tc.setVisible(true);
+            this.dispose();
+        }
+        else
+        {
+            TelaInicial tc = new TelaInicial();
+            tc.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void CBverStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_CBverStateChanged

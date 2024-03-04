@@ -5,6 +5,7 @@
 package telas;
 
 import bd.ProdutoDAO;
+import entities.Funcionario;
 import entities.Produto;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -21,7 +22,14 @@ public class TelaCadastroProduto extends javax.swing.JFrame {
     /**
      * Creates new form TelaCadastroProduto
      */
+    private Funcionario funcionario = new Funcionario();
+    
     public TelaCadastroProduto() {
+        initComponents();
+    }
+    public TelaCadastroProduto(Funcionario funcionario) 
+    {
+        this.funcionario = funcionario;
         initComponents();
     }
 
@@ -293,9 +301,18 @@ public class TelaCadastroProduto extends javax.swing.JFrame {
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         // TODO add your handling code here:
-        TelaInicial tc = new TelaInicial();
-        tc.setVisible(true);
-        this.dispose();
+        if(funcionario.getSetor().equals("Administração"))
+        {
+            TelaInicialAdmin tc = new TelaInicialAdmin(funcionario);
+            tc.setVisible(true);
+            this.dispose();
+        }
+        else
+        {
+            TelaInicial tc = new TelaInicial();
+            tc.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void TFloteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFloteActionPerformed

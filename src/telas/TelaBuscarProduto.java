@@ -5,6 +5,7 @@
 package telas;
 
 import bd.ProdutoDAO;
+import entities.Funcionario;
 import entities.Produto;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -21,7 +22,16 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
     /**
      * Creates new form TelaBuscarProduto
      */
+    
+    private Funcionario funcionario = new Funcionario();
+    
     public TelaBuscarProduto() {
+        initComponents();
+    }
+    
+    public TelaBuscarProduto(Funcionario funcionario) 
+    {
+        this.funcionario = funcionario;
         initComponents();
     }
 
@@ -42,6 +52,7 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
         TFcodigo = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        Lvoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela Buscar por Produto");
@@ -71,6 +82,13 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
             }
         });
 
+        Lvoltar.setText("Voltar");
+        Lvoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LvoltarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -95,6 +113,10 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(187, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(Lvoltar)
+                .addGap(209, 209, 209))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,7 +133,9 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
                     .addComponent(jButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addGap(52, 52, 52)
+                .addComponent(Lvoltar)
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -187,6 +211,22 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
             TAsaida.setText(resultado);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void LvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LvoltarActionPerformed
+        // TODO add your handling code here:
+        if(funcionario.getSetor().equals("Administração"))
+        {
+            TelaInicialAdmin tc = new TelaInicialAdmin(funcionario);
+            tc.setVisible(true);
+            this.dispose();
+        }
+        else
+        {
+            TelaInicial tc = new TelaInicial();
+            tc.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_LvoltarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -223,6 +263,7 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Lvoltar;
     private javax.swing.JTextArea TAsaida;
     private javax.swing.JTextField TFcodigo;
     private javax.swing.JButton jButton1;

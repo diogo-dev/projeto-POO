@@ -14,6 +14,8 @@ import javax.swing.JOptionPane;
  */
 public class TelaLogin extends javax.swing.JFrame {
 
+    private final Funcionario funcionario = new Funcionario();
+    
     public TelaLogin() {
         initComponents();
     }
@@ -135,7 +137,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
         //Setar os valores de usuario e senha para o objeto funcionario
-        Funcionario funcionario = new Funcionario();
+        //Funcionario funcionario = new Funcionario();
         funcionario.setUsuario(TFusuario.getText());
         funcionario.setSenha(String.valueOf(PFsenha.getPassword()));
         //Verificar se eles conferem e estão no cadastrados no BD
@@ -149,7 +151,7 @@ public class TelaLogin extends javax.swing.JFrame {
             if(entrarAdmin == true)
             {
                 JOptionPane.showMessageDialog(null, "Bem-Vindo Administrador!");
-                TelaInicialAdmin tca = new TelaInicialAdmin();
+                TelaInicialAdmin tca = new TelaInicialAdmin(funcionario);
                 tca.setVisible(true);
                 this.dispose();
             }

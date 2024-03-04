@@ -21,7 +21,16 @@ public class TelaBuscarFuncionario extends javax.swing.JFrame {
     /**
      * Creates new form TelaBuscarFuncionario
      */
+    
+    private Funcionario funcionario = new Funcionario();
+    
     public TelaBuscarFuncionario() {
+        initComponents();
+    }
+    
+    public TelaBuscarFuncionario(Funcionario funcionario) 
+    {
+        this.funcionario = funcionario;
         initComponents();
     }
 
@@ -76,6 +85,11 @@ public class TelaBuscarFuncionario extends javax.swing.JFrame {
         bntVoltar.setFont(new java.awt.Font("Segoe UI", 1, 23)); // NOI18N
         bntVoltar.setForeground(new java.awt.Color(255, 102, 102));
         bntVoltar.setText("Voltar");
+        bntVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntVoltarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -178,11 +192,11 @@ public class TelaBuscarFuncionario extends javax.swing.JFrame {
 
     private void bntBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntBuscarActionPerformed
 
-        Funcionario funcionario = new Funcionario();
-        funcionario.setUsuario(TFusuario.getText());
+        Funcionario funcionarioBusca = new Funcionario();
+        funcionarioBusca.setUsuario(TFusuario.getText());
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         
-        if (funcionario.getUsuario().equals(""))
+        if (funcionarioBusca.getUsuario().equals(""))
         {
             JOptionPane.showMessageDialog(null, "Digite o usuario do funcionario!");
         }
@@ -190,7 +204,7 @@ public class TelaBuscarFuncionario extends javax.swing.JFrame {
         {
             List<Funcionario> funcionarios = new ArrayList<>();
             FuncionarioDAO funDAO = new FuncionarioDAO();
-            funcionarios = funDAO.listarFuncionario(funcionario);
+            funcionarios = funDAO.listarFuncionario(funcionarioBusca);
             
             String resultado = "Dados do funcionario:\n";
             for (Funcionario f : funcionarios){
@@ -211,6 +225,22 @@ public class TelaBuscarFuncionario extends javax.swing.JFrame {
     private void bntAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntAtualizarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bntAtualizarActionPerformed
+
+    private void bntVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntVoltarActionPerformed
+        // TODO add your handling code here:
+         if(funcionario.getSetor().equals("Administração"))
+        {
+            TelaInicialAdmin tc = new TelaInicialAdmin(funcionario);
+            tc.setVisible(true);
+            this.dispose();
+        }
+        else
+        {
+            TelaInicial tc = new TelaInicial();
+            tc.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_bntVoltarActionPerformed
 
     /**
      * @param args the command line arguments
