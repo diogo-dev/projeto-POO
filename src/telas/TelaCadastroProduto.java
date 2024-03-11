@@ -309,7 +309,7 @@ public class TelaCadastroProduto extends javax.swing.JFrame {
         }
         else
         {
-            TelaInicial tc = new TelaInicial();
+            TelaInicial tc = new TelaInicial(funcionario);
             tc.setVisible(true);
             this.dispose();
         }

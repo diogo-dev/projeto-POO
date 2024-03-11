@@ -4,6 +4,8 @@
  */
 package telas;
 
+import entities.Funcionario;
+
 /**
  *
  * @author diogo
@@ -13,7 +15,16 @@ public class TelaInicial extends javax.swing.JFrame {
     /**
      * Creates new form TelaCadastros
      */
+    
+    private Funcionario funcionario = new Funcionario();
+    
     public TelaInicial() {
+        initComponents();
+    }
+    
+    public TelaInicial(Funcionario funcionario) 
+    {
+        this.funcionario = funcionario;
         initComponents();
     }
 
@@ -42,7 +53,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jLabel1.setText("O QUE DESEJA FAZER?");
 
         cmbCadastro.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        cmbCadastro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CADASTRAR PRODUTO", "BUSCAR POR PRODUTO", "CADASTRAR FUNCIONÁRIO" }));
+        cmbCadastro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CADASTRAR PRODUTO", "BUSCAR POR PRODUTO" }));
 
         Limage04.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/04.png"))); // NOI18N
 
@@ -111,26 +122,14 @@ public class TelaInicial extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (cmbCadastro.getSelectedItem().toString().equals("CADASTRAR PRODUTO"))
         {
-            TelaCadastroProduto tcp = new TelaCadastroProduto();
+            TelaCadastroProduto tcp = new TelaCadastroProduto(funcionario);
             tcp.setVisible(true);
             this.dispose();
         }
         else if (cmbCadastro.getSelectedItem().toString().equals("BUSCAR POR PRODUTO"))
         {
-            TelaBuscarProduto tbp = new TelaBuscarProduto();
+            TelaBuscarProduto tbp = new TelaBuscarProduto(funcionario);
             tbp.setVisible(true);
-            this.dispose();
-        }
-        else if (cmbCadastro.getSelectedItem().toString().equals("CADASTRAR FUNCIONÁRIO"))
-        {
-            TelaCadastroFuncionario tcf = new TelaCadastroFuncionario();
-            tcf.setVisible(true);
-            this.dispose();
-        }
-        else
-        {
-            TelaBuscarFuncionario tbf = new TelaBuscarFuncionario();
-            tbf.setVisible(true);
             this.dispose();
         }
     }//GEN-LAST:event_btnContinuarActionPerformed

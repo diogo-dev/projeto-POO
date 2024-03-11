@@ -58,32 +58,33 @@ public class ProdutoDAO
         }
     }
     
-    public void deletarProduto (String nome)
+    public void deletarProduto (Produto produto)
     {
-        String sql = "DELETE FROM produto WHERE nome = ?";
+        String sql = "DELETE FROM produto WHERE codigo = ?";
+        String sqlSelect = "SELECT nome FROM produto WHERE codigo = ?";
         Connection conn = null;
         PreparedStatement pstm = null;
-        String sqlSelect = "SELECT id_filme FROM filme WHERE nome_filme = ?";
         ResultSet rs = null;
         
         try {
             conn = ConexaoBD.createConexao();
             pstm = conn.prepareStatement(sqlSelect);
-            pstm.setString(1, nome); 
-            
+            pstm.setInt(1, produto.getCodigo());            
             rs = pstm.executeQuery();
             
-            if (rs.next()){
+            if (rs.next())
+            {
                 pstm = conn.prepareStatement(sql);
-                pstm.setString(1, nome);
+                pstm.setInt(1, produto.getCodigo());
                 pstm.execute();
-                JOptionPane.showMessageDialog(null, "Filme deletado com sucesso!");
-            }else {
-                JOptionPane.showMessageDialog(null, "Filme não encontrado!");
+                JOptionPane.showMessageDialog(null, "Produto deletado com sucesso!");
             }
-            
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Produto não encontrado!");
+            }                      
         } catch (Exception e){
-            System.out.println("Erro: "+e);
+            System.out.println("Erro: " + e);
         } finally {
             try{
                 if (pstm!=null){
@@ -95,15 +96,78 @@ public class ProdutoDAO
                 if (rs!=null){
                     rs.close();
                 }
-            } catch(SQLException ex){
-                System.out.println("Erro: "+ex);
+            } catch(SQLException e){
+                System.out.println("Erro: " + e);
             }
         }
     }
     
-     public List<Produto> listarProdutos(Produto produto)
+     public List<Produto> listarCodigoProdutos(Produto produto)
      {
-        String sql = "SELECT * FROM produto WHERE codigo like ?";
+        String sql = "SELECT * FROM produto WHERE codigo = ?";
+        String sqlSelect = "SELECT nome FROM produto WHERE codigo = ?";
+        List<Produto> produtos = new ArrayList<Produto>();
+        Connection conn = null;
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+        
+        try{
+            conn = ConexaoBD.createConexao();
+            pstm = conn.prepareStatement(sqlSelect);
+            pstm.setString(1, String.valueOf(produto.getCodigo()));
+            
+            rs = pstm.executeQuery();
+            
+            if (rs.next())
+            {
+                pstm = conn.prepareStatement(sql);
+                pstm.setString(1, String.valueOf(produto.getCodigo()));
+                rs = pstm.executeQuery();
+                while(rs.next())
+                {
+                    Produto p = new Produto();
+                    p.setCodigo(rs.getInt("codigo"));
+                    p.setPreco(rs.getDouble("preço"));
+                    p.setQuantidade(rs.getInt("quantidade"));
+                    p.setNome(rs.getString("nome"));
+                    p.setMarca(rs.getString("marca"));
+                    p.setValidade(rs.getDate("validade"));
+                    p.setSetor(rs.getString("nome_setor"));
+                    p.setLote(rs.getInt("lote"));
+
+                    produtos.add(p);
+                } 
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Produto não encontrado!");
+            }
+    
+            
+        } catch (Exception e){
+            System.out.println("Erro: "+ e);
+        } finally {
+            try{
+                if (pstm!=null){
+                    pstm.close();
+                }
+                if (conn!=null){
+                    conn.close();
+                }
+                if (rs!=null){
+                    rs.close();
+                }
+            } catch(Exception e){
+                System.out.println("Erro: "+ e);
+            }
+        }
+        
+        return produtos;
+    }
+     
+    public List<Produto> listarNomeProdutos(Produto produto)
+    {
+        String sql = "SELECT * FROM produto WHERE nome like ? ORDER BY nome_setor";
         List<Produto> produtos = new ArrayList<Produto>();
         Connection conn = null;
         PreparedStatement pstm = null;
@@ -112,7 +176,7 @@ public class ProdutoDAO
         try{
             conn = ConexaoBD.createConexao();
             pstm = conn.prepareStatement(sql);
-            pstm.setString(1, produto.getCodigo()+"%");
+            pstm.setString(1, produto.getNome()+"%");
             
             rs = pstm.executeQuery();
             

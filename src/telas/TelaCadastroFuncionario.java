@@ -333,7 +333,7 @@ public class TelaCadastroFuncionario extends javax.swing.JFrame {
         
         if(senha.equals(confirmarSenha))
         {
-            // Fazendo a conformação do cadasdtro        
+            // Fazendo a confirmação do cadasdtro        
             int confirmacao = JOptionPane.showConfirmDialog(null, "Realmente quer fazer o cadastro?");
             if (confirmacao == 0)
             {

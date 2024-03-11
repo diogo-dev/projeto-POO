@@ -46,13 +46,13 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        LcodigoNome = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TAsaida = new javax.swing.JTextArea();
-        TFcodigo = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        TFcodigoNome = new javax.swing.JTextField();
         Lvoltar = new javax.swing.JButton();
+        cmbBusca = new javax.swing.JComboBox<>();
+        btnBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela Buscar por Produto");
@@ -62,30 +62,33 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel1.setText("buscar produto");
 
-        jLabel2.setText("jLabel2");
+        LcodigoNome.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        LcodigoNome.setText("Nome/Código do Produto:");
 
         TAsaida.setColumns(20);
+        TAsaida.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         TAsaida.setRows(5);
+        TAsaida.setBorder(new javax.swing.border.MatteBorder(null));
         jScrollPane1.setViewportView(TAsaida);
 
-        jButton1.setText("1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        TFcodigoNome.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
 
-        jButton2.setText("todos");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
+        Lvoltar.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         Lvoltar.setText("Voltar");
         Lvoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LvoltarActionPerformed(evt);
+            }
+        });
+
+        cmbBusca.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        cmbBusca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BUSCAR TODOS", "BUSCAR POR NOME", "BUSCAR POR CÓDIGO" }));
+
+        btnBuscar.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
             }
         });
 
@@ -94,48 +97,45 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(215, 215, 215)
-                            .addComponent(jLabel1))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(164, 164, 164)
-                            .addComponent(jLabel2)
-                            .addGap(35, 35, 35)
-                            .addComponent(TFcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton2)
-                                .addGap(103, 103, 103)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(187, Short.MAX_VALUE))
+                        .addGap(95, 95, 95)
+                        .addComponent(LcodigoNome)
+                        .addGap(34, 34, 34)
+                        .addComponent(TFcodigoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(254, 254, 254)
+                        .addComponent(jLabel1)))
+                .addContainerGap(85, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Lvoltar)
-                .addGap(209, 209, 209))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Lvoltar)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(cmbBusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(164, 164, 164))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(73, 73, 73)
+                .addGap(62, 62, 62)
                 .addComponent(jLabel1)
-                .addGap(60, 60, 60)
+                .addGap(73, 73, 73)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(TFcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
+                    .addComponent(LcodigoNome)
+                    .addComponent(TFcodigoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(cmbBusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscar))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
+                .addGap(30, 30, 30)
                 .addComponent(Lvoltar)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -153,45 +153,28 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void LvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LvoltarActionPerformed
         // TODO add your handling code here:
-        Produto produto = new Produto();
-        produto.setCodigo(Integer.valueOf(TFcodigo.getText()));
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        
-        
-        if(TFcodigo.getText().equals(""))
+        if(funcionario.getSetor().equals("Administração"))
         {
-            JOptionPane.showMessageDialog(null, "Digite o código do produto!");
+            TelaInicialAdmin tc = new TelaInicialAdmin(funcionario);
+            tc.setVisible(true);
+            this.dispose();
         }
         else
         {
-            List<Produto> produtos = new ArrayList<>();
-            ProdutoDAO pDAO = new ProdutoDAO();
-            produtos = pDAO.listarProdutos(produto);
-            
-            String resultado = "Dados do funcionario:\n";
-            for (Produto p : produtos){
-                resultado += "Nome: " + p.getNome() + "\n";
-                resultado += "Marca: " + p.getMarca()+ "\n";
-                resultado += "Código: " + p.getCodigo() + "\n";
-                resultado += "Preço: " + p.getPreco()+ "\n";
-                resultado += "Validade: " + dateFormat.format(p.getValidade())+ "\n";
-                resultado += "Setor: " + p.getSetor()+ "\n";
-                resultado += "Quantidade em Estoque: " + p.getQuantidade()+ "\n";
-                resultado += "Lote: " + p.getLote()+ "\n\n\n";
-            }
-            
-            TAsaida.setText(resultado);
+            TelaInicial tc = new TelaInicial(funcionario);
+            tc.setVisible(true);
+            this.dispose();
         }
-            
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_LvoltarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         Produto produto = new Produto();
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         
-        
+        if (cmbBusca.getSelectedItem().toString().equals("BUSCAR TODOS"))
+        {
             List<Produto> produtos = new ArrayList<>();
             ProdutoDAO pDAO = new ProdutoDAO();
             produtos = pDAO.listarTodosProdutos(produto);
@@ -209,23 +192,64 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
             }
             
             TAsaida.setText(resultado);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void LvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LvoltarActionPerformed
-        // TODO add your handling code here:
-        if(funcionario.getSetor().equals("Administração"))
+        }
+        else if (cmbBusca.getSelectedItem().toString().equals("BUSCAR POR NOME"))
         {
-            TelaInicialAdmin tc = new TelaInicialAdmin(funcionario);
-            tc.setVisible(true);
-            this.dispose();
+            produto.setNome(TFcodigoNome.getText());
+            if(TFcodigoNome.getText().equals(""))
+            {
+                JOptionPane.showMessageDialog(null, "Digite o Nome ou código do produto!");
+            }
+            else
+            {
+                List<Produto> produtos = new ArrayList<>();
+                ProdutoDAO pDAO = new ProdutoDAO();
+                produtos = pDAO.listarNomeProdutos(produto);
+
+                String resultado = "Dados dos Produtos:\n\n";
+                for (Produto p : produtos){
+                    resultado += "Nome: " + p.getNome() + "\n";
+                    resultado += "Marca: " + p.getMarca()+ "\n";
+                    resultado += "Código: " + p.getCodigo() + "\n";
+                    resultado += "Preço: " + p.getPreco()+ "\n";
+                    resultado += "Validade: " + dateFormat.format(p.getValidade())+ "\n";
+                    resultado += "Setor: " + p.getSetor()+ "\n";
+                    resultado += "Quantidade em Estoque: " + p.getQuantidade()+ "\n";
+                    resultado += "Lote: " + p.getLote()+ "\n\n\n";
+                }
+
+                TAsaida.setText(resultado);
+            }
         }
         else
         {
-            TelaInicial tc = new TelaInicial();
-            tc.setVisible(true);
-            this.dispose();
+            produto.setCodigo(Integer.valueOf(TFcodigoNome.getText()));
+            if(TFcodigoNome.getText().equals(""))
+            {
+                JOptionPane.showMessageDialog(null, "Digite o Nome ou código do produto!");
+            }
+            else
+            {
+                List<Produto> produtos = new ArrayList<>();
+                ProdutoDAO pDAO = new ProdutoDAO();
+                produtos = pDAO.listarCodigoProdutos(produto);
+
+                String resultado = "Dados dos produtos:\n\n";
+                for (Produto p : produtos){
+                    resultado += "Nome: " + p.getNome() + "\n";
+                    resultado += "Marca: " + p.getMarca()+ "\n";
+                    resultado += "Código: " + p.getCodigo() + "\n";
+                    resultado += "Preço: " + p.getPreco()+ "\n";
+                    resultado += "Validade: " + dateFormat.format(p.getValidade())+ "\n";
+                    resultado += "Setor: " + p.getSetor()+ "\n";
+                    resultado += "Quantidade em Estoque: " + p.getQuantidade()+ "\n";
+                    resultado += "Lote: " + p.getLote()+ "\n\n\n";
+                }
+
+                TAsaida.setText(resultado);
+            }
         }
-    }//GEN-LAST:event_LvoltarActionPerformed
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -263,13 +287,13 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LcodigoNome;
     private javax.swing.JButton Lvoltar;
     private javax.swing.JTextArea TAsaida;
-    private javax.swing.JTextField TFcodigo;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JTextField TFcodigoNome;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JComboBox<String> cmbBusca;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

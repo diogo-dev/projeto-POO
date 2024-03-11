@@ -4,6 +4,15 @@
  */
 package telas;
 
+import bd.ProdutoDAO;
+import entities.Funcionario;
+import entities.Produto;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author diogo
@@ -13,7 +22,16 @@ public class TelaDeletarProduto extends javax.swing.JFrame {
     /**
      * Creates new form TelaDeletarProduto
      */
+    
+    private Funcionario funcionario = new Funcionario();
+    
     public TelaDeletarProduto() {
+        initComponents();
+    }
+    
+    public TelaDeletarProduto(Funcionario funcionario) 
+    {
+        this.funcionario = funcionario;
         initComponents();
     }
 
@@ -26,23 +44,221 @@ public class TelaDeletarProduto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        Lcodigo = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TAsaida = new javax.swing.JTextArea();
+        TFcodigo = new javax.swing.JTextField();
+        Lvoltar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
+        btnDeletar = new javax.swing.JButton();
+        btnLimpar = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela deletar produto");
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel1.setText("Deletar produto");
+
+        Lcodigo.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        Lcodigo.setText("Código do Produto:");
+
+        TAsaida.setColumns(20);
+        TAsaida.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
+        TAsaida.setRows(5);
+        TAsaida.setBorder(new javax.swing.border.MatteBorder(null));
+        jScrollPane1.setViewportView(TAsaida);
+
+        TFcodigo.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+
+        Lvoltar.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        Lvoltar.setText("Voltar");
+        Lvoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LvoltarActionPerformed(evt);
+            }
+        });
+
+        btnBuscar.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+
+        btnDeletar.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        btnDeletar.setText("Deletar Produto");
+        btnDeletar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeletarActionPerformed(evt);
+            }
+        });
+
+        btnLimpar.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        btnLimpar.setText("Limpar");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(Lvoltar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnLimpar)
+                        .addGap(47, 47, 47)
+                        .addComponent(btnDeletar)))
+                .addGap(164, 164, 164))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(95, 95, 95)
+                            .addComponent(Lcodigo)
+                            .addGap(18, 18, 18)
+                            .addComponent(TFcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(254, 254, 254)
+                            .addComponent(jLabel1))))
+                .addContainerGap(173, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(jLabel1)
+                .addGap(73, 73, 73)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Lcodigo)
+                    .addComponent(TFcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnBuscar)
+                .addGap(42, 42, 42)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnDeletar)
+                    .addComponent(Lvoltar)
+                    .addComponent(btnLimpar))
+                .addContainerGap(68, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void LvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LvoltarActionPerformed
+        // TODO add your handling code here:
+        if(funcionario.getSetor().equals("Administração"))
+        {
+            TelaInicialAdmin tc = new TelaInicialAdmin(funcionario);
+            tc.setVisible(true);
+            this.dispose();
+        }
+        else
+        {
+            TelaInicial tc = new TelaInicial(funcionario);
+            tc.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_LvoltarActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        Produto produto = new Produto();
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        produto.setCodigo(Integer.valueOf(TFcodigo.getText()));
+        
+        if(TFcodigo.getText().equals(""))
+        {
+            JOptionPane.showMessageDialog(null, "Digite o código do produto!");
+        }
+        else
+        {
+            List<Produto> produtos = new ArrayList<>();
+            ProdutoDAO pDAO = new ProdutoDAO();
+            produtos = pDAO.listarCodigoProdutos(produto);
+
+            String resultado = "";
+            for (Produto p : produtos){
+                resultado += "Dados do produto a ser excluído:\n\n";
+                resultado += "-----------------------------------\n";
+                resultado += "Nome: " + p.getNome() + "\n";
+                resultado += "-----------------------------------\n";
+                resultado += "Marca: " + p.getMarca()+ "\n";
+                resultado += "-----------------------------------\n";
+                resultado += "Código: " + p.getCodigo() + "\n";
+                resultado += "-----------------------------------\n";
+                resultado += "Preço: R$ " + p.getPreco()+ "\n";
+                resultado += "-----------------------------------\n";
+                resultado += "Validade: " + dateFormat.format(p.getValidade())+ "\n";
+                resultado += "-----------------------------------\n";
+                resultado += "Setor: " + p.getSetor()+ "\n";
+                resultado += "-----------------------------------\n";
+                resultado += "Quantidade em Estoque: " + p.getQuantidade()+ "\n";
+                resultado += "-----------------------------------\n";
+                resultado += "Lote: " + p.getLote()+ "\n";
+                resultado += "-----------------------------------\n";
+            }
+
+            TAsaida.setText(resultado);
+        }
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarActionPerformed
+        // TODO add your handling code here:
+        Produto produto = new Produto();
+        String texto = TFcodigo.getText();
+        
+        if (texto.equals(""))
+        {
+            produto.setCodigo(-1); //valor -1 representa um codigo de produto invalido que nao sera encontrado
+        }
+        else
+        {
+            produto.setCodigo(Integer.valueOf(texto));
+        }
+        
+        int confirmacao = JOptionPane.showConfirmDialog(null, "Realmente quer deletar este produto?");
+        if (confirmacao == 0)
+        {
+            ProdutoDAO pDAO = new ProdutoDAO();
+            pDAO.deletarProduto(produto);
+            TFcodigo.setText("");
+            TAsaida.setText("");
+        }
+    }//GEN-LAST:event_btnDeletarActionPerformed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        // TODO add your handling code here:
+        TFcodigo.setText("");
+        TAsaida.setText("");
+    }//GEN-LAST:event_btnLimparActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,5 +296,15 @@ public class TelaDeletarProduto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Lcodigo;
+    private javax.swing.JButton Lvoltar;
+    private javax.swing.JTextArea TAsaida;
+    private javax.swing.JTextField TFcodigo;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnDeletar;
+    private javax.swing.JButton btnLimpar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

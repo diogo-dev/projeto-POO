@@ -57,7 +57,110 @@ public class FuncionarioDAO {
 
     public List<Funcionario> listarFuncionario(Funcionario funcionario)
     {
-        String sql = "SELECT * FROM Funcionario WHERE usuario like ?";
+        String sql = "SELECT * FROM funcionario WHERE usuario = ?";
+        String sqlSelect = "SELECT nome FROM funcionario WHERE usuario = ?";
+        List<Funcionario> funcionarios = new ArrayList<>();
+
+        Connection conn = null;
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+
+        try{
+            //Criar conexao
+            conn = ConexaoBD.createConexao();
+            //Criar o Prepared Statement
+            pstm = conn.prepareStatement(sqlSelect);
+            pstm.setString(1, funcionario.getUsuario());
+            //Criar o Result Set
+            rs = pstm.executeQuery();
+            
+            if (rs.next())
+            {
+                pstm = conn.prepareStatement(sql);
+                pstm.setString(1, funcionario.getUsuario());
+                rs = pstm.executeQuery();
+                
+                while(rs.next())
+                {
+                    Funcionario f = new Funcionario();
+                    f.setDataNascimento(rs.getDate("data_de_nascimento"));
+                    f.setEmail(rs.getString("email"));
+                    f.setFuncao(rs.getString("funcao"));
+                    f.setNome(rs.getString("nome"));
+                    f.setSalario(rs.getDouble("salario"));
+                    f.setSetor(rs.getString("nome_setor"));
+                    f.setSexo(rs.getString("sexo"));
+                    f.setUsuario(rs.getString("usuario"));
+
+                    funcionarios.add(f);
+                }
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Usuario não encontrado!");
+            }
+        } catch (Exception e){
+            System.out.println("Erro: " + e);
+        } finally {
+            try{
+                if (pstm != null){
+                    pstm.close();
+                }
+                if(conn != null){
+                    rs.close();
+                }
+            } catch(SQLException e){
+                System.out.println("Erro: " + e);
+            }
+        }
+        return funcionarios;
+    }
+
+    public void removerporFuncionario(Funcionario funcionario){
+        String sql = "DELETE FROM funcionario WHERE usuario = ?";
+        String sqlSelect = "SELECT nome FROM funcionario WHERE usuario = ?";
+        Connection conn = null;
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+        
+        try{
+           //Criar a conexao
+           conn = ConexaoBD.createConexao();
+           //Criar o Prepared Statement
+           pstm = conn.prepareStatement(sqlSelect);
+           pstm.setString(1, funcionario.getUsuario());
+           rs = pstm.executeQuery();
+           
+           if (rs.next())
+           {
+                pstm = conn.prepareStatement(sql);
+                pstm.setString(1, funcionario.getUsuario());
+                pstm.execute();
+                JOptionPane.showMessageDialog(null, "Usuario removido com sucesso!");
+           }
+           else
+           {
+                JOptionPane.showMessageDialog(null, "Usuario não encontrado!");   
+           }
+        } catch (Exception e){
+            System.out.println("Erro: " + e);
+        } finally {
+            try{
+                if (pstm!=null){
+                    pstm.close();
+                }
+                if (conn!=null){
+                    conn.close();
+                }
+            } catch(SQLException e){
+                System.out.println("Erro: " + e);
+            }
+        }
+    }
+    
+    public List<Funcionario> listarTodosFuncionarios(Funcionario funcionario)
+    {
+        String sql = "SELECT * FROM Funcionario ORDER BY nome_setor";
         List<Funcionario> funcionarios = new ArrayList<>();
 
         Connection conn = null;
@@ -69,7 +172,6 @@ public class FuncionarioDAO {
             conn = ConexaoBD.createConexao();
             //Criar o Prepared Statement
             pstm = conn.prepareStatement(sql);
-            pstm.setString(1, funcionario.getUsuario() + "%");
             //Criar o Result Set
             rs = pstm.executeQuery();
 
@@ -103,37 +205,6 @@ public class FuncionarioDAO {
             }
         }
         return funcionarios;
-    }
-
-    public void removerporFuncionario(Funcionario funcionario){
-        String sql = "DELETE FROM funcionario WHERE usuario = ?";
-        Connection conn = null;
-        PreparedStatement pstm = null;
-        
-        try{
-           //Criar a conexao
-           conn = ConexaoBD.createConexao();
-           //Criar o Prepared Statement
-           pstm = conn.prepareStatement(sql);
-           pstm.setString(1, funcionario.getUsuario());
-
-           pstm.execute();
-           JOptionPane.showMessageDialog(null, "Usuario removido com sucesso!");
-
-        } catch (Exception ex){
-            System.out.println("Erro: "+ex);
-        } finally {
-            try{
-                if (pstm!=null){
-                    pstm.close();
-                }
-                if (conn!=null){
-                    conn.close();
-                }
-            } catch(SQLException ex){
-                System.out.println("Erro: "+ex);
-            }
-        }
     }
 
     public boolean autenticar(Funcionario funcionario){
@@ -205,6 +276,10 @@ public class FuncionarioDAO {
                 {
                     autenticado = true;
                     funcionario.setSetor("Administração");
+                }
+                else
+                {
+                    funcionario.setSetor(setorBanco);
                 }
             }
         } catch (SQLException e){

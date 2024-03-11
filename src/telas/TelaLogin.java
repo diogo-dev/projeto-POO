@@ -157,7 +157,8 @@ public class TelaLogin extends javax.swing.JFrame {
             }
             else
             {
-                TelaInicial tc = new TelaInicial();
+                JOptionPane.showMessageDialog(null, "Bem-Vindo Funcionário!!");
+                TelaInicial tc = new TelaInicial(funcionario);
                 tc.setVisible(true);
                 this.dispose();
             }

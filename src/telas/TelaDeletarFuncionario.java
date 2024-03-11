@@ -4,6 +4,14 @@
  */
 package telas;
 
+import bd.FuncionarioDAO;
+import entities.Funcionario;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author diogo
@@ -13,10 +21,17 @@ public class TelaDeletarFuncionario extends javax.swing.JFrame {
     /**
      * Creates new form TelaDeletarFuncionario
      */
+    Funcionario funcionario = new Funcionario();
+    
     public TelaDeletarFuncionario() {
         initComponents();
     }
 
+    public TelaDeletarFuncionario(Funcionario funcionario) 
+    {
+        this.funcionario = funcionario;
+        initComponents();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,23 +41,220 @@ public class TelaDeletarFuncionario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        Lusuario = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TAsaida = new javax.swing.JTextArea();
+        TFusuario = new javax.swing.JTextField();
+        Lvoltar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
+        btnDeletar = new javax.swing.JButton();
+        btnLimpar = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Tela deletar funcionário");
+        setTitle("Tela Deletar Funcionário");
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel1.setText("Deletar Funcionário");
+
+        Lusuario.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        Lusuario.setText("Usuário:");
+
+        TAsaida.setColumns(20);
+        TAsaida.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
+        TAsaida.setRows(5);
+        TAsaida.setBorder(new javax.swing.border.MatteBorder(null));
+        jScrollPane1.setViewportView(TAsaida);
+
+        TFusuario.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+
+        Lvoltar.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        Lvoltar.setText("Voltar");
+        Lvoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LvoltarActionPerformed(evt);
+            }
+        });
+
+        btnBuscar.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+
+        btnDeletar.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        btnDeletar.setText("Deletar Funcionário");
+        btnDeletar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeletarActionPerformed(evt);
+            }
+        });
+
+        btnLimpar.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        btnLimpar.setText("Limpar");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(Lvoltar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                        .addComponent(btnLimpar)
+                        .addGap(47, 47, 47)
+                        .addComponent(btnDeletar)))
+                .addGap(164, 164, 164))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(95, 95, 95)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(Lusuario)
+                                .addGap(18, 18, 18)
+                                .addComponent(TFusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(8, 8, 8))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(212, 212, 212)
+                        .addComponent(jLabel1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addComponent(jLabel1)
+                .addGap(61, 61, 61)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Lusuario)
+                    .addComponent(TFusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnBuscar)
+                .addGap(42, 42, 42)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnDeletar)
+                    .addComponent(Lvoltar)
+                    .addComponent(btnLimpar))
+                .addContainerGap(83, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void LvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LvoltarActionPerformed
+        // TODO add your handling code here:
+        if(funcionario.getSetor().equals("Administração"))
+        {
+            TelaInicialAdmin tc = new TelaInicialAdmin(funcionario);
+            tc.setVisible(true);
+            this.dispose();
+        }
+        else
+        {
+            TelaInicial tc = new TelaInicial(funcionario);
+            tc.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_LvoltarActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        Funcionario funcionarioBusca = new Funcionario();
+        funcionarioBusca.setUsuario(TFusuario.getText());
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        
+        if (funcionarioBusca.getUsuario().equals(""))
+        {
+            JOptionPane.showMessageDialog(null, "Usuário não encontrado!");
+        }
+        else
+        {
+            List<Funcionario> funcionarios = new ArrayList<>();
+            FuncionarioDAO funDAO = new FuncionarioDAO();
+            funcionarios = funDAO.listarFuncionario(funcionarioBusca);
+            
+            String resultado = "";
+            for (Funcionario f : funcionarios){
+                resultado += "Dados do funcionário(a):\n\n";
+                resultado += "-----------------------------------\n";
+                resultado += "Nome: " + f.getNome() + "\n";
+                resultado += "-----------------------------------\n";
+                resultado += "Email: " + f.getEmail() + "\n";
+                resultado += "-----------------------------------\n";
+                resultado += "Setor: " + f.getSetor()+ "\n";
+                resultado += "-----------------------------------\n";
+                resultado += "Função: " + f.getFuncao()+ "\n";
+                resultado += "-----------------------------------\n";
+                resultado += "Sexo: " + f.getSexo()+ "\n";
+                resultado += "-----------------------------------\n";
+                resultado += "Data de Nascimento: " + dateFormat.format(f.getDataNascimento()) + "\n";
+                resultado += "-----------------------------------\n\n";
+            }
+            
+            TAsaida.setText(resultado);
+            
+        }
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletarActionPerformed
+        // TODO add your handling code here:
+        Funcionario funcionarioDeletar = new Funcionario();
+        String usuario = TFusuario.getText();
+
+        if (usuario.equals(""))
+        {
+            funcionarioDeletar.setNome("Nenhum"); //valor "Nenhum" representa um nome de funcionario invalido que nao sera encontrado
+        }
+        else
+        {
+            funcionarioDeletar.setUsuario(usuario);
+        }
+
+        int confirmacao = JOptionPane.showConfirmDialog(null, "Realmente quer deletar este funcionário?");
+        if (confirmacao == 0)
+        {
+            FuncionarioDAO fDAO = new FuncionarioDAO();
+            fDAO.removerporFuncionario(funcionarioDeletar);
+            TFusuario.setText("");
+            TAsaida.setText("");
+        }
+    }//GEN-LAST:event_btnDeletarActionPerformed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        // TODO add your handling code here:
+        TFusuario.setText("");
+        TAsaida.setText("");
+    }//GEN-LAST:event_btnLimparActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,5 +292,15 @@ public class TelaDeletarFuncionario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Lusuario;
+    private javax.swing.JButton Lvoltar;
+    private javax.swing.JTextArea TAsaida;
+    private javax.swing.JTextField TFusuario;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnDeletar;
+    private javax.swing.JButton btnLimpar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
