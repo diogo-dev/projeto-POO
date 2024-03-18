@@ -94,5 +94,20 @@ public class Produto
         this.setor = setor;
     }
     
-    
+    @Override
+    public String toString()
+    {
+        return  """
+                ----------------------------------
+                Nome: """ + getNome() + "\n" + 
+                "Código: " + getCodigo() + "\n" +
+                "Marca: " + getMarca()+ "\n" + 
+                "Quantidade: " + getQuantidade()+ "\n" + 
+                "Preço: " + getPreco()+ "\n" + 
+                "Validade: " + getValidade() + "\n" + 
+                "Lote: " + getLote()+ "\n" + 
+                "Setor: " + getSetor()+ "\n\n";
+                
+    }
+     
 }

@@ -13,7 +13,7 @@ import java.sql.SQLException;
 public class FuncionarioDAO {
 
     public void inserirFuncionario(Funcionario funcionario){
-        String sql = "INSERT INTO Funcionario(nome, email, sexo, funcao, data_de_nascimento, nome_setor, salario, usuario, senha)"
+        String sql = "INSERT INTO funcionario(nome, email, sexo, funcao, data_de_nascimento, nome_setor, salario, usuario, senha)"
                 + "Values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         Connection conn = null;
         PreparedStatement pstm = null;
@@ -54,6 +54,52 @@ public class FuncionarioDAO {
             }
         }
     }
+    
+     public void AtualizarFuncionario(Funcionario funcionario)
+    {
+        String sql = "UPDATE funcionario SET nome = ?, email = ?, sexo = ?, funcao = ?, data_de_nascimento = ?, nome_setor = ?, salario = ?, senha = ? WHERE usuario = ?";
+        
+        Connection connection = null;
+        PreparedStatement pstm = null;
+        
+        try{
+            //criar a conexao
+            connection = ConexaoBD.createConexao();
+            //criar um preparedStatement
+            pstm = connection.prepareStatement(sql);
+            //colocar os parametros
+            pstm.setString(1, funcionario.getNome());
+            pstm.setString(2, funcionario.getEmail());
+            pstm.setString(3, funcionario.getSexo());
+            pstm.setString(4, funcionario.getFuncao());
+            pstm.setDate(5, new Date(funcionario.getDataNascimento().getTime()));
+            pstm.setString(6, funcionario.getSetor());
+            pstm.setDouble(7, funcionario.getSalario());
+            pstm.setString(8, funcionario.getSenha());
+            pstm.setString(9, funcionario.getUsuario());
+            
+            pstm.execute();
+            JOptionPane.showMessageDialog(null, "Funcionario atualizado com sucesso!");
+            
+        }catch(Exception e){
+            System.out.println("ERRO: " + e.getMessage());
+            // caso tente-se cadastrar um produto que possui o mesmo código de um ja cadastrado
+            JOptionPane.showMessageDialog(null, "Código de identificação já Cadastrado!");
+        } finally {
+            try {
+                if (connection != null)
+                {
+                    connection.close();
+                }
+                if (pstm != null)
+                {
+                    pstm.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("ERRO: " + e.getMessage());
+            }
+        }
+    }
 
     public List<Funcionario> listarFuncionario(Funcionario funcionario)
     {
@@ -81,18 +127,18 @@ public class FuncionarioDAO {
                 rs = pstm.executeQuery();
                 
                 while(rs.next())
-                {
-                    Funcionario f = new Funcionario();
-                    f.setDataNascimento(rs.getDate("data_de_nascimento"));
-                    f.setEmail(rs.getString("email"));
-                    f.setFuncao(rs.getString("funcao"));
-                    f.setNome(rs.getString("nome"));
-                    f.setSalario(rs.getDouble("salario"));
-                    f.setSetor(rs.getString("nome_setor"));
-                    f.setSexo(rs.getString("sexo"));
-                    f.setUsuario(rs.getString("usuario"));
+                {         
+                    funcionario.setDataNascimento(rs.getDate("data_de_nascimento"));
+                    funcionario.setEmail(rs.getString("email"));
+                    funcionario.setFuncao(rs.getString("funcao"));
+                    funcionario.setNome(rs.getString("nome"));
+                    funcionario.setSalario(rs.getDouble("salario"));
+                    funcionario.setSetor(rs.getString("nome_setor"));
+                    funcionario.setSexo(rs.getString("sexo"));
+                    funcionario.setUsuario(rs.getString("usuario"));
+                    funcionario.setSenha(rs.getString("senha"));
 
-                    funcionarios.add(f);
+                    funcionarios.add(funcionario);
                 }
             }
             else

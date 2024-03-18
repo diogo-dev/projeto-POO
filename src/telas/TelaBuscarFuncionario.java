@@ -23,6 +23,7 @@ public class TelaBuscarFuncionario extends javax.swing.JFrame {
      */
     
     private Funcionario funcionario = new Funcionario();
+    private Funcionario funcionarioBusca = new Funcionario();
     
     public TelaBuscarFuncionario() {
         initComponents();
@@ -31,6 +32,7 @@ public class TelaBuscarFuncionario extends javax.swing.JFrame {
     public TelaBuscarFuncionario(Funcionario funcionario) 
     {
         this.funcionario = funcionario;
+        funcionarioBusca.setSetor("nenhum");//flag padrão para verificar se o valor do obj funcionarioBusca foi setado corretamenta
         initComponents();
     }
 
@@ -74,8 +76,8 @@ public class TelaBuscarFuncionario extends javax.swing.JFrame {
 
         Ltitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/10.png"))); // NOI18N
 
-        bntBuscar.setFont(new java.awt.Font("Segoe UI", 1, 23)); // NOI18N
-        bntBuscar.setForeground(new java.awt.Color(249, 181, 6));
+        bntBuscar.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        bntBuscar.setForeground(new java.awt.Color(249, 154, 8));
         bntBuscar.setText("Buscar");
         bntBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,8 +86,8 @@ public class TelaBuscarFuncionario extends javax.swing.JFrame {
         });
 
         bntVoltar.setFont(new java.awt.Font("Segoe UI", 1, 23)); // NOI18N
-        bntVoltar.setForeground(new java.awt.Color(255, 102, 102));
-        bntVoltar.setText("<");
+        bntVoltar.setForeground(new java.awt.Color(255, 57, 23));
+        bntVoltar.setText("<<");
         bntVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bntVoltarActionPerformed(evt);
@@ -114,8 +116,7 @@ public class TelaBuscarFuncionario extends javax.swing.JFrame {
             .addGap(0, 13, Short.MAX_VALUE)
         );
 
-        bntAtualizar.setFont(new java.awt.Font("Segoe UI", 1, 23)); // NOI18N
-        bntAtualizar.setForeground(new java.awt.Color(249, 181, 6));
+        bntAtualizar.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         bntAtualizar.setText("Atualizar dados funcionário");
         bntAtualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,8 +124,8 @@ public class TelaBuscarFuncionario extends javax.swing.JFrame {
             }
         });
 
-        bntBuscarTodos.setFont(new java.awt.Font("Segoe UI", 1, 23)); // NOI18N
-        bntBuscarTodos.setForeground(new java.awt.Color(249, 181, 6));
+        bntBuscarTodos.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        bntBuscarTodos.setForeground(new java.awt.Color(249, 154, 8));
         bntBuscarTodos.setText("Buscar Todos");
         bntBuscarTodos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,29 +146,32 @@ public class TelaBuscarFuncionario extends javax.swing.JFrame {
                         .addComponent(Ltitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 681, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(25, 25, 25)
+                        .addComponent(bntVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(bntBuscarTodos)
-                                .addGap(32, 32, 32)
-                                .addComponent(bntBuscar))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(bntBuscarTodos)
+                                        .addGap(32, 32, 32)
+                                        .addComponent(bntBuscar))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(Lusuario)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(TFusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(Lusuario)
-                                .addGap(18, 18, 18)
-                                .addComponent(TFusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(bntAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(50, 50, 50)))
                         .addGap(115, 115, 115))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(bntVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(bntAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(171, 171, 171))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(29, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Ltitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -181,11 +185,11 @@ public class TelaBuscarFuncionario extends javax.swing.JFrame {
                     .addComponent(bntBuscarTodos))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bntAtualizar)
-                    .addComponent(bntVoltar))
-                .addGap(27, 27, 27)
+                    .addComponent(bntVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -206,7 +210,6 @@ public class TelaBuscarFuncionario extends javax.swing.JFrame {
 
     private void bntBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntBuscarActionPerformed
 
-        Funcionario funcionarioBusca = new Funcionario();
         funcionarioBusca.setUsuario(TFusuario.getText());
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         
@@ -220,14 +223,23 @@ public class TelaBuscarFuncionario extends javax.swing.JFrame {
             FuncionarioDAO funDAO = new FuncionarioDAO();
             funcionarios = funDAO.listarFuncionario(funcionarioBusca);
             
-            String resultado = "Dados do funcionario:\n";
+            String resultado = "Dados do funcionario:\n\n";
             for (Funcionario f : funcionarios){
+                resultado += "-----------------------------------\n";
                 resultado += "Nome: " + f.getNome() + "\n";
+                resultado += "-----------------------------------\n";
+                resultado += "Usuário: " + f.getUsuario()+ "\n";
+                resultado += "-----------------------------------\n";
                 resultado += "Email: " + f.getEmail() + "\n";
+                resultado += "-----------------------------------\n";
                 resultado += "Data de Nascimento: " + dateFormat.format(f.getDataNascimento()) + "\n";
+                resultado += "-----------------------------------\n";
                 resultado += "Sexo: " + f.getSexo()+ "\n";
+                resultado += "-----------------------------------\n";
                 resultado += "Função: " + f.getFuncao()+ "\n";
+                resultado += "-----------------------------------\n";
                 resultado += "Setor: " + f.getSetor()+ "\n";
+                resultado += "-----------------------------------\n";
                 resultado += "Salário: " + f.getSalario()+ "\n";
                 resultado += "-----------------------------------\n";
             }
@@ -238,7 +250,16 @@ public class TelaBuscarFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_bntBuscarActionPerformed
 
     private void bntAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntAtualizarActionPerformed
-        // TODO add your handling code here:
+        if (funcionarioBusca.getSetor().equals("nenhum"))
+        {
+            JOptionPane.showMessageDialog(null, "Funcionario não encontrado! Digite o usuário do funcionário!");
+        }
+        else
+        {
+            TelaAtualizarFuncionario taf = new TelaAtualizarFuncionario(funcionario,funcionarioBusca);
+            taf.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_bntAtualizarActionPerformed
 
     private void bntVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntVoltarActionPerformed
@@ -258,8 +279,7 @@ public class TelaBuscarFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_bntVoltarActionPerformed
 
     private void bntBuscarTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntBuscarTodosActionPerformed
-        // TODO add your handling code here:
-        Funcionario funcionarioBusca = new Funcionario();
+        funcionarioBusca.setSetor("nenhum");//flag padrão para verificar se o valor do obj funcionarioBusca foi setado corretamenta
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         
         List<Funcionario> funcionarios = new ArrayList<>();
@@ -269,6 +289,7 @@ public class TelaBuscarFuncionario extends javax.swing.JFrame {
         String resultado = "Dados de todos os funcionarios:\n\n";
         for (Funcionario f : funcionarios){
             resultado += "Nome: " + f.getNome() + "\n";
+            resultado += "Usuário: " + f.getUsuario()+ "\n";
             resultado += "Email: " + f.getEmail() + "\n";
             resultado += "Data de Nascimento: " + dateFormat.format(f.getDataNascimento()) + "\n";
             resultado += "Sexo: " + f.getSexo()+ "\n";

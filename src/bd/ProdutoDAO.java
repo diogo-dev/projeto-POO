@@ -58,6 +58,51 @@ public class ProdutoDAO
         }
     }
     
+    public void AtualizarProduto(Produto produto)
+    {
+        String sql = "UPDATE produto SET preço = ?, quantidade = ?, nome = ?, marca = ?, validade = ?, nome_setor = ?, lote = ? WHERE codigo = ?";
+        
+        Connection connection = null;
+        PreparedStatement pstm = null;
+        
+        try{
+            //criar a conexao
+            connection = ConexaoBD.createConexao();
+            //criar um preparedStatement
+            pstm = connection.prepareStatement(sql);
+            //colocar os parametros
+            pstm.setDouble(1, produto.getPreco());
+            pstm.setInt(2, produto.getQuantidade());
+            pstm.setString(3, produto.getNome());
+            pstm.setString(4, produto.getMarca());
+            pstm.setDate(5, new Date(produto.getValidade().getTime()));
+            pstm.setString(6, produto.getSetor());
+            pstm.setInt(7, produto.getLote());
+            pstm.setInt(8, produto.getCodigo());
+            
+            pstm.execute();
+            JOptionPane.showMessageDialog(null, "Produto atualizado com sucesso!");
+            
+        }catch(Exception e){
+            System.out.println("ERRO: " + e.getMessage());
+            // caso tente-se cadastrar um produto que possui o mesmo código de um ja cadastrado
+            JOptionPane.showMessageDialog(null, "Código de identificação já Cadastrado!");
+        } finally {
+            try {
+                if (connection != null)
+                {
+                    connection.close();
+                }
+                if (pstm != null)
+                {
+                    pstm.close();
+                }
+            } catch (SQLException e) {
+                System.out.println("ERRO: " + e.getMessage());
+            }
+        }
+    }
+    
     public void deletarProduto (Produto produto)
     {
         String sql = "DELETE FROM produto WHERE codigo = ?";
@@ -124,18 +169,17 @@ public class ProdutoDAO
                 pstm.setString(1, String.valueOf(produto.getCodigo()));
                 rs = pstm.executeQuery();
                 while(rs.next())
-                {
-                    Produto p = new Produto();
-                    p.setCodigo(rs.getInt("codigo"));
-                    p.setPreco(rs.getDouble("preço"));
-                    p.setQuantidade(rs.getInt("quantidade"));
-                    p.setNome(rs.getString("nome"));
-                    p.setMarca(rs.getString("marca"));
-                    p.setValidade(rs.getDate("validade"));
-                    p.setSetor(rs.getString("nome_setor"));
-                    p.setLote(rs.getInt("lote"));
+                {                   
+                    produto.setCodigo(rs.getInt("codigo"));
+                    produto.setPreco(rs.getDouble("preço"));
+                    produto.setQuantidade(rs.getInt("quantidade"));
+                    produto.setNome(rs.getString("nome"));
+                    produto.setMarca(rs.getString("marca"));
+                    produto.setValidade(rs.getDate("validade"));
+                    produto.setSetor(rs.getString("nome_setor"));
+                    produto.setLote(rs.getInt("lote"));
 
-                    produtos.add(p);
+                    produtos.add(produto);
                 } 
             }
             else
@@ -218,7 +262,7 @@ public class ProdutoDAO
      
     public List<Produto> listarTodosProdutos(Produto produto)
     {
-        String sql = "SELECT DISTINCT codigo, nome FROM produto";
+        String sql = "SELECT DISTINCT codigo, nome FROM produto ORDER BY nome";
         List<Produto> produtos = new ArrayList<Produto>();
         Connection conn = null;
         PreparedStatement pstm = null;

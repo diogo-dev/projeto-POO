@@ -133,7 +133,7 @@ public class TelaInicialAdmin extends javax.swing.JFrame {
         }
         else if (cmbCadastro.getSelectedItem().toString().equals("DELETAR PRODUTO"))
         {
-            TelaDeletarProduto tdp = new TelaDeletarProduto();
+            TelaDeletarProduto tdp = new TelaDeletarProduto(funcionario);
             tdp.setVisible(true);
             this.dispose();
         }
@@ -151,7 +151,7 @@ public class TelaInicialAdmin extends javax.swing.JFrame {
         }
         else
         {
-            TelaDeletarFuncionario tdf = new TelaDeletarFuncionario();
+            TelaDeletarFuncionario tdf = new TelaDeletarFuncionario(funcionario);
             tdf.setVisible(true);
             this.dispose();
         }

@@ -24,6 +24,7 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
      */
     
     private Funcionario funcionario = new Funcionario();
+    private Produto produto = new Produto();
     
     public TelaBuscarProduto() {
         initComponents();
@@ -32,6 +33,7 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
     public TelaBuscarProduto(Funcionario funcionario) 
     {
         this.funcionario = funcionario;
+        produto.setSetor("nenhum"); //flag padrão para verificar se o valor do obj produto foi setado corretamenta pela opção BUSCAR CÓDIGO
         initComponents();
     }
 
@@ -50,9 +52,12 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         TAsaida = new javax.swing.JTextArea();
         TFcodigoNome = new javax.swing.JTextField();
-        Lvoltar = new javax.swing.JButton();
+        btnVoltar = new javax.swing.JButton();
         cmbBusca = new javax.swing.JComboBox<>();
         btnBuscar = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        btnAtualizarProduto = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela Buscar por Produto");
@@ -60,7 +65,7 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel1.setText("buscar produto");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/13.png"))); // NOI18N
 
         LcodigoNome.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         LcodigoNome.setText("Nome/Código do Produto:");
@@ -73,11 +78,12 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
 
         TFcodigoNome.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
 
-        Lvoltar.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
-        Lvoltar.setText("Voltar");
-        Lvoltar.addActionListener(new java.awt.event.ActionListener() {
+        btnVoltar.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        btnVoltar.setForeground(new java.awt.Color(255, 57, 23));
+        btnVoltar.setText("<<");
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LvoltarActionPerformed(evt);
+                btnVoltarActionPerformed(evt);
             }
         });
 
@@ -85,6 +91,7 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
         cmbBusca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BUSCAR TODOS", "BUSCAR POR NOME", "BUSCAR POR CÓDIGO" }));
 
         btnBuscar.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        btnBuscar.setForeground(new java.awt.Color(249, 154, 8));
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,50 +99,89 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
             }
         });
 
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 13, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 13, Short.MAX_VALUE)
+        );
+
+        btnAtualizarProduto.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
+        btnAtualizarProduto.setText("Atualizar dados Produto");
+        btnAtualizarProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtualizarProdutoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addComponent(LcodigoNome)
-                        .addGap(34, 34, 34)
-                        .addComponent(TFcodigoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(85, 85, 85)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(LcodigoNome)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(TFcodigoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(cmbBusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, Short.MAX_VALUE)
+                                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(53, 53, 53)
+                                .addComponent(btnAtualizarProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(254, 254, 254)
-                        .addComponent(jLabel1)))
-                .addContainerGap(85, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Lvoltar)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(cmbBusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(164, 164, 164))
+                        .addContainerGap()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 678, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(62, 62, 62)
+                .addGap(34, 34, 34)
                 .addComponent(jLabel1)
-                .addGap(73, 73, 73)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LcodigoNome)
                     .addComponent(TFcodigoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbBusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBuscar))
                 .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBuscar)
+                    .addComponent(cmbBusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(Lvoltar)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnVoltar)
+                    .addComponent(btnAtualizarProduto))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -153,7 +199,7 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void LvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LvoltarActionPerformed
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         // TODO add your handling code here:
         if(funcionario.getSetor().equals("Administração"))
         {
@@ -167,10 +213,10 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
             tc.setVisible(true);
             this.dispose();
         }
-    }//GEN-LAST:event_LvoltarActionPerformed
+    }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        Produto produto = new Produto();
+        
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         
         if (cmbBusca.getSelectedItem().toString().equals("BUSCAR TODOS"))
@@ -236,20 +282,44 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
 
                 String resultado = "Dados dos produtos:\n\n";
                 for (Produto p : produtos){
+                    resultado += "-------------------------------------\n";
                     resultado += "Nome: " + p.getNome() + "\n";
+                    resultado += "-------------------------------------\n";
                     resultado += "Marca: " + p.getMarca()+ "\n";
+                    resultado += "-------------------------------------\n";
                     resultado += "Código: " + p.getCodigo() + "\n";
+                    resultado += "-------------------------------------\n";
                     resultado += "Preço: " + p.getPreco()+ "\n";
+                    resultado += "-------------------------------------\n";
                     resultado += "Validade: " + dateFormat.format(p.getValidade())+ "\n";
+                    resultado += "-------------------------------------\n";
                     resultado += "Setor: " + p.getSetor()+ "\n";
+                    resultado += "-------------------------------------\n";
                     resultado += "Quantidade em Estoque: " + p.getQuantidade()+ "\n";
-                    resultado += "Lote: " + p.getLote()+ "\n\n\n";
+                    resultado += "-------------------------------------\n";
+                    resultado += "Lote: " + p.getLote()+ "\n";
+                    resultado += "-------------------------------------\n\n";
                 }
 
                 TAsaida.setText(resultado);
             }
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnAtualizarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarProdutoActionPerformed
+       
+        if (produto.getSetor().equals("nenhum"))
+        {
+            JOptionPane.showMessageDialog(null, "Produto não encontrado. Selecione a opção BUSCAR POR CÓDIGO!");
+        }
+        else
+        {
+            TelaAtualizarProduto tap = new TelaAtualizarProduto(funcionario, produto);
+            tap.setVisible(true);
+            this.dispose();
+        }
+   
+    }//GEN-LAST:event_btnAtualizarProdutoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -288,13 +358,16 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LcodigoNome;
-    private javax.swing.JButton Lvoltar;
     private javax.swing.JTextArea TAsaida;
     private javax.swing.JTextField TFcodigoNome;
+    private javax.swing.JButton btnAtualizarProduto;
     private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnVoltar;
     private javax.swing.JComboBox<String> cmbBusca;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

@@ -105,4 +105,21 @@ public class Funcionario
         this.senha = senha;
     }
     
+     @Override
+    public String toString()
+    {
+        return  """
+                ----------------------------------
+                Nome: """ + getNome() + "\n" + 
+                "Email: " + getEmail()+ "\n" +
+                "Função: " + getFuncao()+ "\n" + 
+                "Salario: " + getSalario()+ "\n" + 
+                "Data de Nascimento: " + getDataNascimento()+ "\n" + 
+                "Setor: " + getSetor()+ "\n" + 
+                "Sexo: " + getSexo()+ "\n" + 
+                "Usuário: " + getUsuario()+ "\n" + 
+                "Senha: " + getSenha()+ "\n\n";
+                
+    }
+    
 }
