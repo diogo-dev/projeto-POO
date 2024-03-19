@@ -39,6 +39,7 @@ public class FuncionarioDAO {
             
         } catch (Exception e) {
             System.out.println("Erro: "+ e);
+            JOptionPane.showMessageDialog(null, "Funcionário já cadastrado!");
         } finally{
             try{
                 if (pstm != null)

@@ -86,7 +86,7 @@ public class TelaCadastroProduto extends javax.swing.JFrame {
         TFmarca.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
 
         Lcodigo.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        Lcodigo.setText("Código de identificação:");
+        Lcodigo.setText("Código identificação:");
 
         TFcodigo.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
         TFcodigo.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +111,7 @@ public class TelaCadastroProduto extends javax.swing.JFrame {
         TFpreco.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
 
         cmbCategoria.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        cmbCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Café da Manhã", "Mercearia", "Carnes", "Higiene", "Laticínios", "Frios", "Limpeza", "Hortifruti", "Outro" }));
+        cmbCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Café da Manhã", "Mercearia", "Bebidas", "Carnes", "Higiene", "Laticínios", "Frios", "Limpeza", "Hortifruti", "Outro" }));
 
         TFlote.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
         TFlote.addActionListener(new java.awt.event.ActionListener() {
@@ -147,12 +147,10 @@ public class TelaCadastroProduto extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Lcodigo)
                             .addComponent(TFcodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(41, 41, 41)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGap(65, 65, 65)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Lquantidade)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(TFquantidade)
-                                .addGap(32, 32, 32))))
+                            .addComponent(TFquantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -175,7 +173,7 @@ public class TelaCadastroProduto extends javax.swing.JFrame {
                                     .addComponent(TFpreco, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(Lpreco1))
                                 .addGap(6, 6, 6)))))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

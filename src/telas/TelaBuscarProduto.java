@@ -70,6 +70,9 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
         LcodigoNome.setFont(new java.awt.Font("Segoe UI", 0, 23)); // NOI18N
         LcodigoNome.setText("Nome/Código do Produto:");
 
+        jScrollPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane1.setViewportView(null);
+
         TAsaida.setColumns(20);
         TAsaida.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
         TAsaida.setRows(5);
@@ -151,8 +154,8 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
                                     .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(53, 53, 53)
+                                .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(35, 35, 35)
                                 .addComponent(btnAtualizarProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
@@ -221,6 +224,7 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
         
         if (cmbBusca.getSelectedItem().toString().equals("BUSCAR TODOS"))
         {
+            produto.setSetor("nenhum");
             List<Produto> produtos = new ArrayList<>();
             ProdutoDAO pDAO = new ProdutoDAO();
             produtos = pDAO.listarTodosProdutos(produto);
@@ -265,17 +269,23 @@ public class TelaBuscarProduto extends javax.swing.JFrame {
                 }
 
                 TAsaida.setText(resultado);
+                produto.setSetor("nenhum");
             }
         }
         else
         {
-            produto.setCodigo(Integer.valueOf(TFcodigoNome.getText()));
             if(TFcodigoNome.getText().equals(""))
             {
                 JOptionPane.showMessageDialog(null, "Digite o Nome ou código do produto!");
             }
             else
             {
+                try{
+                    produto.setCodigo(Integer.valueOf(TFcodigoNome.getText()));
+                }catch (NumberFormatException e){
+                    System.out.println(e);
+                }
+                               
                 List<Produto> produtos = new ArrayList<>();
                 ProdutoDAO pDAO = new ProdutoDAO();
                 produtos = pDAO.listarCodigoProdutos(produto);

@@ -177,10 +177,9 @@ public class TelaCadastroFuncionario extends javax.swing.JFrame {
                         .addComponent(Lemail, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(Lfuncao, javax.swing.GroupLayout.Alignment.LEADING))
                     .addComponent(Lsenha)
-                    .addComponent(CBver, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CBver, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(CBver1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LconfirmarSenha)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
@@ -194,7 +193,8 @@ public class TelaCadastroFuncionario extends javax.swing.JFrame {
                         .addGap(52, 52, 52)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cmbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Lsexo))))
+                            .addComponent(Lsexo)))
+                    .addComponent(CBver1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(37, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -374,6 +374,7 @@ public class TelaCadastroFuncionario extends javax.swing.JFrame {
         TFdataNascimento.setText("");
         TFsalario.setText("");
         TFfuncao.setText("");
+        TFusuario.setText("");
         PFsenha.setText("");
         PFconfirmarSenha.setText("");
     }//GEN-LAST:event_btnLimparActionPerformed

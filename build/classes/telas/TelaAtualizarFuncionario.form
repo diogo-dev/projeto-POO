@@ -94,37 +94,37 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="Lsetor" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="Lusuario1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="cmbSetor" alignment="0" max="32767" attributes="0"/>
-                          <Component id="TFnome" alignment="0" max="32767" attributes="0"/>
-                          <Component id="Lnome" alignment="0" max="32767" attributes="0"/>
-                          <Component id="TFusuario" alignment="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="Lsetor" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cmbSetor" alignment="0" max="32767" attributes="0"/>
+                              <Component id="TFnome" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Lnome" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="Lsenha" min="-2" max="-2" attributes="0"/>
+                          <Component id="PFsenha" alignment="0" min="-2" pref="249" max="-2" attributes="0"/>
+                          <Component id="CBver" alignment="0" min="-2" pref="138" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="PFsenha" alignment="0" pref="249" max="32767" attributes="0"/>
-                              <Component id="TFfuncao" alignment="0" max="32767" attributes="0"/>
+                          <Component id="CBver1" min="-2" pref="129" max="-2" attributes="0"/>
+                          <Component id="PFconfirmarSenha" min="-2" pref="238" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="TFfuncao" alignment="0" pref="249" max="32767" attributes="0"/>
                               <Component id="TFemail" alignment="0" max="32767" attributes="0"/>
                               <Component id="Lemail" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="Lfuncao" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="LconfirmarSenha" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="Lsenha" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="CBver" alignment="0" min="-2" pref="107" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="CBver1" alignment="0" min="-2" pref="107" max="-2" attributes="0"/>
-                          <Component id="LconfirmarSenha" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                               <Component id="Lsalario" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="PFconfirmarSenha" alignment="0" max="32767" attributes="0"/>
                                   <Component id="TFsalario" alignment="0" max="32767" attributes="0"/>
                                   <Component id="LdataNascimento" alignment="0" max="32767" attributes="0"/>
                                   <Component id="TFdataNascimento" alignment="0" max="32767" attributes="0"/>
@@ -166,9 +166,7 @@
                                   <Component id="Lfuncao" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="Lsalario" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                              <Component id="LconfirmarSenha" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                              <EmptySpace min="54" pref="156" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
@@ -181,21 +179,20 @@
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="Lusuario1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="Lsenha" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="LconfirmarSenha" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="TFusuario" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="PFsenha" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="PFconfirmarSenha" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="CBver" alignment="3" max="32767" attributes="0"/>
-                          <Component id="CBver1" alignment="3" max="32767" attributes="0"/>
+                          <Component id="CBver" alignment="0" max="32767" attributes="0"/>
+                          <Component id="CBver1" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                   </Group>
@@ -336,21 +333,6 @@
                 <Property name="text" type="java.lang.String" value="Confirmar senha:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="TFusuario">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="26" style="0"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="Lusuario1">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="26" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Usu&#xe1;rio:"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JPasswordField" name="PFconfirmarSenha">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -364,6 +346,9 @@
                   <Font name="Segoe UI" size="26" style="0"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PFsenhaActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="Lsenha">
               <Properties>

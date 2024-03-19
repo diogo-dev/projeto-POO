@@ -111,7 +111,7 @@ public class TelaAtualizarProduto extends javax.swing.JFrame {
         TFpreco.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
 
         cmbCategoria.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
-        cmbCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Café da Manhã", "Mercearia", "Carnes", "Higiene", "Laticínios", "Frios", "Limpeza", "Hortifruti", "Outro" }));
+        cmbCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Café da Manhã", "Mercearia", "Bebidas", "Carnes", "Higiene", "Laticínios", "Frios", "Limpeza", "Hortifruti", "Outro" }));
 
         TFlote.setFont(new java.awt.Font("Segoe UI", 0, 26)); // NOI18N
         TFlote.addActionListener(new java.awt.event.ActionListener() {
@@ -293,18 +293,9 @@ public class TelaAtualizarProduto extends javax.swing.JFrame {
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         // TODO add your handling code here:
-        if(funcionario.getSetor().equals("Administração"))
-        {
-            TelaBuscarProduto tbp = new TelaBuscarProduto(funcionario);
-            tbp.setVisible(true);
-            this.dispose();
-        }
-        else
-        {
-            TelaInicial tc = new TelaInicial(funcionario);
-            tc.setVisible(true);
-            this.dispose();
-        }
+        TelaBuscarProduto tbp = new TelaBuscarProduto(funcionario);
+        tbp.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed

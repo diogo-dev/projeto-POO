@@ -114,13 +114,10 @@
                                   <Component id="Lcodigo" min="-2" max="-2" attributes="0"/>
                                   <Component id="TFcodigo" min="-2" pref="251" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="Lquantidade" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Component id="TFquantidade" max="32767" attributes="0"/>
-                                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="TFquantidade" min="-2" pref="252" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -153,7 +150,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="45" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -193,7 +190,7 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="Lcodigo" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Lquantidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Lquantidade" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -241,7 +238,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="26" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="C&#xf3;digo de identifica&#xe7;&#xe3;o:"/>
+                <Property name="text" type="java.lang.String" value="C&#xf3;digo identifica&#xe7;&#xe3;o:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="TFcodigo">
@@ -293,16 +290,17 @@
                   <Font name="Segoe UI" size="26" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="9">
+                  <StringArray count="10">
                     <StringItem index="0" value="Caf&#xe9; da Manh&#xe3;"/>
                     <StringItem index="1" value="Mercearia"/>
-                    <StringItem index="2" value="Carnes"/>
-                    <StringItem index="3" value="Higiene"/>
-                    <StringItem index="4" value="Latic&#xed;nios"/>
-                    <StringItem index="5" value="Frios"/>
-                    <StringItem index="6" value="Limpeza"/>
-                    <StringItem index="7" value="Hortifruti"/>
-                    <StringItem index="8" value="Outro"/>
+                    <StringItem index="2" value="Bebidas"/>
+                    <StringItem index="3" value="Carnes"/>
+                    <StringItem index="4" value="Higiene"/>
+                    <StringItem index="5" value="Latic&#xed;nios"/>
+                    <StringItem index="6" value="Frios"/>
+                    <StringItem index="7" value="Limpeza"/>
+                    <StringItem index="8" value="Hortifruti"/>
+                    <StringItem index="9" value="Outro"/>
                   </StringArray>
                 </Property>
               </Properties>

@@ -44,7 +44,7 @@ public class TelaInicial extends javax.swing.JFrame {
         btnContinuar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Tela de Cadastros");
+        setTitle("Tela Inicial");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 

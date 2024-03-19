@@ -112,11 +112,10 @@
                               <Component id="Lfuncao" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="Lsenha" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="CBver" alignment="0" min="-2" pref="107" max="-2" attributes="0"/>
+                          <Component id="CBver" alignment="0" min="-2" pref="137" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="CBver1" min="-2" pref="107" max="-2" attributes="0"/>
                           <Component id="LconfirmarSenha" min="-2" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
@@ -135,6 +134,7 @@
                                   <Component id="Lsexo" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <Component id="CBver1" alignment="0" min="-2" pref="133" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="37" max="32767" attributes="0"/>
                   </Group>

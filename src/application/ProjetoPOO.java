@@ -1,10 +1,13 @@
 package application;
 
+import telas.TelaLogin;
+
 public class ProjetoPOO 
 {
     public static void main(String[] args) 
     {
-        System.out.println("Ola!");
+        TelaLogin tl = new TelaLogin();
+        tl.setVisible(true);
     }
     
 }
